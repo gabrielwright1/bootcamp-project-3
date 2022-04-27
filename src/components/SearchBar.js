@@ -6,7 +6,6 @@ const SearchBar = ({ getRestaurants }) => {
 
 	// handler
 	const handleUserChoice = (e) => {
-		// update the userChoice
 		setUserChoice(e.target.value);
 	};
 
