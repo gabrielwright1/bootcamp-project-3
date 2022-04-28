@@ -1,6 +1,11 @@
+// modules
 import { useState, useEffect } from "react";
+import { getDatabase, ref, onValue, push } from "firebase/database";
 
-const Card = ({ burgerImage, randomPrice }) => {
+// config
+import firebase from "../firebase";
+
+const Card = ({ addSubtotals, burgerImage }) => {
 	// state
 	const [counter, setCounter] = useState(0);
 	const [price, setPrice] = useState(0);
@@ -29,21 +34,40 @@ const Card = ({ burgerImage, randomPrice }) => {
 		setSubtotal(price * counter);
 	}, [counter]);
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		// update total with subtotals
+		addSubtotals(subtotal);
+	};
+
 	return (
-		<div className="burgerCard">
+		<form
+			onSubmit={(e) => {
+				handleSubmit(e);
+			}}
+			action="submit"
+			className="burgerCard"
+		>
 			<div className="img-container">
 				<img
 					src={burgerImage.urls.small}
 					alt={burgerImage.alt_description}
 				/>
 			</div>
-			<p className="burgerName">Name: {burgerImage.alt_description}</p>
-			<p className="burgerPrice">Price: $ {price}</p>
-			<p className="burgerSubtotal">Subtotal: $ {subtotal}</p>
-
-			<button onClick={handleAdd}>+</button>
-			<button onClick={handleSubtract}>-</button>
-		</div>
+			<ul>
+				<li className="burgerName">Name: Burger</li>
+				<li className="burgerPrice">Price: $ {price}</li>
+				<li className="burgerCount">Count: {counter}</li>
+				<li className="burgerSubtotal">Subtotal: $ {subtotal}</li>
+			</ul>
+			<button type="button" onClick={handleAdd}>
+				Add
+			</button>
+			<button type="button" onClick={handleSubtract}>
+				Remove
+			</button>
+			<button type="submit">Add to cart</button>
+		</form>
 	);
 };
 export default Card;

@@ -10,8 +10,8 @@ import { getDatabase, ref, onValue, push, remove } from "firebase/database";
 import firebase from "./firebase";
 
 // components
-import Card from "./components/Card";
 import CardContainer from "./components/CardContainer";
+import ShoppingCart from "./components/ShoppingCart";
 
 function App() {
 	// tom tom map api
@@ -20,6 +20,7 @@ function App() {
 	// state
 	const [query, setQuery] = useState("burgers");
 	const [burgerImages, setBurgerImages] = useState([]);
+	const [total, setTotal] = useState(0);
 
 	// API call for food images
 	useEffect(() => {
@@ -38,10 +39,18 @@ function App() {
 		});
 	}, [query]);
 
+	const addSubtotals = (subtotal) => {
+		setTotal(total + subtotal);
+	};
+
 	return (
 		<div className="App">
 			<h1>Burgers</h1>
-			<CardContainer burgerImages={burgerImages} />
+			<ShoppingCart total={total} />
+			<CardContainer
+				addSubtotals={addSubtotals}
+				burgerImages={burgerImages}
+			/>
 		</div>
 	);
 }
