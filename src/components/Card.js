@@ -5,8 +5,9 @@ import { getDatabase, ref, onValue, push } from "firebase/database";
 // config
 import firebase from "../firebase";
 
-const Card = ({ addSubtotals, burgerImage }) => {
+const Card = ({ addListItems, burgerImage }) => {
 	// state
+	const [name, setName] = useState("Burger");
 	const [counter, setCounter] = useState(0);
 	const [price, setPrice] = useState(0);
 	const [subtotal, setSubtotal] = useState(0);
@@ -23,10 +24,12 @@ const Card = ({ addSubtotals, burgerImage }) => {
 		}
 	};
 
-	// On mount - randomize prices for each burger
 	useEffect(() => {
+		// On mount - randomize prices for each burger
 		const randomPrice = Math.floor(Math.random() * 10 + 1);
 		setPrice(randomPrice);
+		// randomize the name of each whopper
+		setName(`Burger #${randomPrice}`);
 	}, []);
 
 	// When counter is changed - update subtotal
@@ -36,8 +39,13 @@ const Card = ({ addSubtotals, burgerImage }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// update total with subtotals
-		addSubtotals(subtotal);
+		// update shopping cart
+		addListItems({
+			name: name,
+			price: price,
+			counter: counter,
+			subtotal: subtotal,
+		});
 	};
 
 	return (
@@ -55,9 +63,9 @@ const Card = ({ addSubtotals, burgerImage }) => {
 				/>
 			</div>
 			<ul>
-				<li className="burgerName">Name: Burger</li>
+				<li className="burgerName">Name: {name}</li>
 				<li className="burgerPrice">Price: $ {price}</li>
-				<li className="burgerCount">Count: {counter}</li>
+				<li className="burgerCount">Counter: {counter}</li>
 				<li className="burgerSubtotal">Subtotal: $ {subtotal}</li>
 			</ul>
 			<button type="button" onClick={handleAdd}>

@@ -1,13 +1,13 @@
 import Card from "./Card";
 
-const CardContainer = ({ addSubtotals, burgerImages }) => {
+const CardContainer = ({ addListItems, burgerImages }) => {
 	return (
 		<div>
 			{burgerImages.map((burgerImage) => {
 				return (
 					<Card
 						key={burgerImage.id}
-						addSubtotals={addSubtotals}
+						addListItems={addListItems}
 						burgerImage={burgerImage}
 					/>
 				);

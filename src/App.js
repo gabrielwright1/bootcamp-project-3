@@ -21,6 +21,7 @@ function App() {
 	const [query, setQuery] = useState("burgers");
 	const [burgerImages, setBurgerImages] = useState([]);
 	const [total, setTotal] = useState(0);
+	const [shoppingList, setShoppingList] = useState([]);
 
 	// API call for food images
 	useEffect(() => {
@@ -39,16 +40,26 @@ function App() {
 		});
 	}, [query]);
 
-	const addSubtotals = (subtotal) => {
+	const addTotal = (subtotal) => {
 		setTotal(total + subtotal);
+	};
+
+	const addListItems = (listItem) => {
+		const { subtotal } = listItem;
+
+		// update total using subtotals
+		addTotal(subtotal);
+
+		// append new items to shopping list
+		setShoppingList((oldList) => [...oldList, listItem]);
 	};
 
 	return (
 		<div className="App">
 			<h1>Burgers</h1>
-			<ShoppingCart total={total} />
+			<ShoppingCart total={total} shoppingList={shoppingList} />
 			<CardContainer
-				addSubtotals={addSubtotals}
+				addListItems={addListItems}
 				burgerImages={burgerImages}
 			/>
 		</div>
