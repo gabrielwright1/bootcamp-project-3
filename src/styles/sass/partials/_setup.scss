@@ -215,3 +215,11 @@ template {
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 }
+
+img {
+	max-width: 100%;
+	display: block;
+	height: auto;
+	border-style: none;
+	object-fit: cover;
+}

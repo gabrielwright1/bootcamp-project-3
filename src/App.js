@@ -86,41 +86,54 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1>Burgers</h1>
-			{/* Shopping Cart */}
-			<h2>Shopping Cart</h2>
-			<ul>
-				{burgers.map((burger) => {
-					const { key, name, subtotal, counter } = burger;
-					return (
-						<li key={key}>
-							<p>
-								{counter} x {name} = $ {subtotal}
-							</p>
-							<button
-								onClick={() => {
-									handleRemove(key);
-								}}
-							>
-								Remove
-							</button>
-						</li>
-					);
-				})}
-			</ul>
-
-			<div className="cardContainer">
-				{burgerImages.map((burgerImage) => {
-					return (
-						<Card
-							key={burgerImage.id}
-							imageId={burgerImage.id}
-							addListItems={addListItems}
-							burgerImage={burgerImage}
-						/>
-					);
-				})}
-			</div>
+			<header>
+				<div className="header-container wrapper">
+					<div className="title-container">
+						<h1>Burger Builder</h1>
+					</div>
+					<div className="shopping-container">
+						<h2>Shopping Cart</h2>
+						<ul>
+							{burgers.map((burger) => {
+								const { key, name, subtotal, counter } = burger;
+								return (
+									<li key={key}>
+										<p>
+											{counter} x {name} = $ {subtotal}
+										</p>
+										<button
+											className="sm-button"
+											onClick={() => {
+												handleRemove(key);
+											}}
+										>
+											Remove
+										</button>
+									</li>
+								);
+							})}
+						</ul>
+					</div>
+				</div>
+			</header>
+			<main>
+				<section className="menu wrapper">
+					<h2>Menu</h2>
+					<div className="card-container">
+						{burgerImages.map((burgerImage) => {
+							return (
+								<Card
+									key={burgerImage.id}
+									imageId={burgerImage.id}
+									addListItems={addListItems}
+									burgerImage={burgerImage}
+								/>
+							);
+						})}
+					</div>
+				</section>
+			</main>
+			<footer></footer>
 		</div>
 	);
 }

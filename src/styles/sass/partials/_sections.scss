@@ -1,0 +1,10 @@
+.menu {
+	&.wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	background-color: $clr-white;
+	margin: 30px auto;
+	border-radius: $border-radius;
+	text-align: center;
+}

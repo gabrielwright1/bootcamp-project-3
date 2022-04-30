@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Monoton&display=swap");
 h1 {
-	@include setTypography($ff-primary, $fw-regular, $fs-700);
+	@include setTypography($ff-primary, $fw-regular, $fs-750);
+	color: $clr-dark-pink;
 }
 
 // h2 - my toolkit, recent projects, my journey
@@ -8,6 +9,7 @@ h2 {
 	@include setTypography($ff-secondary, $fw-regular, $fs-650);
 	text-transform: uppercase;
 	color: $clr-black;
+	text-decoration: underline;
 }
 
 // h3 - I'm a front end, who am i here are some, Hacker News, please feel free
@@ -16,6 +18,35 @@ h3 {
 	color: $clr-white;
 }
 p {
-	@include setTypography($ff-secondary, $fw-regular, $fs-300);
+	@include setTypography($ff-secondary, $fw-regular, $fs-400);
+	text-transform: uppercase;
 	color: $clr-black;
+}
+
+.sm-button {
+	@include setTypography($ff-secondary, $fw-bold, $fs-400);
+	color: $clr-black;
+	background-color: $clr-pink;
+	border-radius: $border-radius;
+	border: none;
+	padding: 1rem 0.8rem;
+	margin: 0 5px;
+	text-transform: uppercase;
+	filter: drop-shadow(4px 4px 0 $clr-black);
+	transition: all 0.25s ease-in-out;
+	display: inline-block;
+	&:hover,
+	&:focus {
+		filter: drop-shadow(0 0 0 $clr-black);
+		transform: translate(4px, 4px);
+		transition: all 0.25s ease-in-out;
+	}
+}
+
+.burgerDetails {
+	li {
+		@include setTypography($ff-secondary, $fw-regular, $fs-400);
+		text-transform: uppercase;
+		color: $clr-black;
+	}
 }

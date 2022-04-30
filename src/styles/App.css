@@ -263,10 +263,20 @@ template {
   overflow: hidden;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  border-style: none;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 h1 {
   font-family: "Monoton", cursive;
   font-weight: 400;
-  font-size: 2.95rem;
+  font-size: 4.5rem;
+  color: #a60078;
 }
 
 h2 {
@@ -275,6 +285,7 @@ h2 {
   font-size: 2rem;
   text-transform: uppercase;
   color: #000000;
+  text-decoration: underline;
 }
 
 h3 {
@@ -287,7 +298,42 @@ h3 {
 p {
   font-family: "Comfortaa", cursive;
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.sm-button {
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #000000;
+  background-color: #ff00b8;
+  border-radius: 20px;
+  border: none;
+  padding: 1rem 0.8rem;
+  margin: 0 5px;
+  text-transform: uppercase;
+  -webkit-filter: drop-shadow(4px 4px 0 #000000);
+          filter: drop-shadow(4px 4px 0 #000000);
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  display: inline-block;
+}
+.sm-button:hover, .sm-button:focus {
+  -webkit-filter: drop-shadow(0 0 0 #000000);
+          filter: drop-shadow(0 0 0 #000000);
+  -webkit-transform: translate(4px, 4px);
+          transform: translate(4px, 4px);
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.burgerDetails li {
+  font-family: "Comfortaa", cursive;
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-transform: uppercase;
   color: #000000;
 }
 
@@ -324,6 +370,8 @@ p {
 
 body {
   overflow-x: hidden;
+  background-image: url("../../../assets/bg-checker-dark.png");
+  background-attachment: fixed;
 }
 
 a {
@@ -332,4 +380,121 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+.card-container {
+  margin: 10px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #6bbfaf;
+  padding: 10px;
+  border-radius: 20px;
+  height: auto;
+}
+.card-container form {
+  margin: 0 0 20px 0;
+}
+.card-container .img-container {
+  max-height: 275px;
+  overflow-y: hidden;
+  border-radius: 20px;
+}
+
+.burgerDetails {
+  border-radius: 20px;
+  background-color: #ffffff;
+  padding: 20px 10px;
+}
+.burgerDetails li {
+  text-align: right;
+}
+
+.card-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.header-container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 20px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.header-container .title-container {
+  margin: 0 auto;
+}
+.header-container h1 {
+  margin: 30px 0;
+}
+
+.shopping-container {
+  width: 25rem;
+  padding: 0 30px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.shopping-container ul {
+  padding: 0;
+}
+.shopping-container h2 {
+  text-align: right;
+  margin: 10px 0;
+}
+.shopping-container li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  margin: 10px 0;
+}
+.shopping-container p {
+  text-align: right;
+  margin: auto 0 auto 20px;
+}
+
+.menu {
+  background-color: #ffffff;
+  margin: 30px auto;
+  border-radius: 20px;
+  text-align: center;
+}
+.menu.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }

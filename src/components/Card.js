@@ -69,19 +69,27 @@ const Card = ({ addListItems, burgerImage, imageId }) => {
 					alt={burgerImage.alt_description}
 				/>
 			</div>
-			<ul>
+			<ul className="burgerDetails">
 				<li className="burgerName">Name: {name}</li>
 				<li className="burgerPrice">Price: $ {price}</li>
 				<li className="burgerCount">Counter: {counter}</li>
 				<li className="burgerSubtotal">Subtotal: $ {subtotal}</li>
 			</ul>
-			<button type="button" onClick={handleAdd}>
-				Add
-			</button>
-			<button type="button" onClick={handleSubtract}>
-				Remove
-			</button>
-			<button type="submit">Add to cart</button>
+			<div className="card-buttons">
+				<button className="sm-button" type="button" onClick={handleAdd}>
+					Add
+				</button>
+				<button
+					className="sm-button"
+					type="button"
+					onClick={handleSubtract}
+				>
+					Remove
+				</button>
+				<button className="sm-button" type="submit">
+					Add to cart
+				</button>
+			</div>
 		</form>
 	);
 };

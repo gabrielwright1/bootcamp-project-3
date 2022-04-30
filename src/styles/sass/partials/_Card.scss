@@ -1,0 +1,34 @@
+.card-container {
+	margin: 10px auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background-color: $clr-teal;
+	padding: 10px;
+	border-radius: $border-radius;
+	height: auto;
+	form {
+		margin: 0 0 20px 0;
+	}
+	.img-container {
+		max-height: 275px;
+		overflow-y: hidden;
+		border-radius: $border-radius;
+	}
+}
+
+.burgerDetails {
+	border-radius: $border-radius;
+	background-color: $clr-white;
+	padding: 20px 10px;
+	li {
+		text-align: right;
+	}
+}
+
+.card-buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
