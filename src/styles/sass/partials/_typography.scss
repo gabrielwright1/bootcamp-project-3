@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Monoton&display=swap");
+h1 {
+	@include setTypography($ff-primary, $fw-regular, $fs-700);
+}
+
+// h2 - my toolkit, recent projects, my journey
+h2 {
+	@include setTypography($ff-secondary, $fw-regular, $fs-650);
+	text-transform: uppercase;
+	color: $clr-black;
+}
+
+// h3 - I'm a front end, who am i here are some, Hacker News, please feel free
+h3 {
+	@include setTypography($ff-secondary, $fw-regular, $fs-500);
+	color: $clr-white;
+}
+p {
+	@include setTypography($ff-secondary, $fw-regular, $fs-300);
+	color: $clr-black;
+}

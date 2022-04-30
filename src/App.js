@@ -1,5 +1,5 @@
 // styling
-import "./App.css";
+import "./styles/sass/App.scss";
 
 // modules
 import { useEffect, useState } from "react";
