@@ -5,7 +5,7 @@ import { getDatabase, ref, onValue, push } from "firebase/database";
 // config
 import firebase from "../firebase";
 
-const Card = ({ addListItems, burgerImage }) => {
+const Card = ({ addListItems, burgerImage, imageId }) => {
 	// state
 	const [name, setName] = useState("Burger");
 	const [counter, setCounter] = useState(0);
@@ -39,13 +39,20 @@ const Card = ({ addListItems, burgerImage }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// update shopping cart
-		addListItems({
-			name: name,
-			price: price,
-			counter: counter,
-			subtotal: subtotal,
-		});
+
+		// check to see if user selected counter
+		if (counter > 0) {
+			const burgerObj = {
+				name: name,
+				price: price,
+				counter: counter,
+				subtotal: subtotal,
+				imageId: imageId,
+			};
+			addListItems(burgerObj);
+		} else {
+			alert("Please enter an amount");
+		}
 	};
 
 	return (
