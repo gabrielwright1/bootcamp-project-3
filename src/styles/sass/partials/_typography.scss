@@ -1,15 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Monoton&display=swap");
 h1 {
-	@include setTypography($ff-primary, $fw-regular, $fs-750);
-	color: $clr-dark-pink;
+	@include setTypography($ff-secondary, $fw-regular, $fs-800);
+	color: $clr-white;
+	background-color: $clr-black;
+	text-shadow: (4px 4px 4px $clr-light-blue);
+	padding: 10px 0;
 }
 
 // h2 - my toolkit, recent projects, my journey
 h2 {
-	@include setTypography($ff-secondary, $fw-regular, $fs-650);
+	@include setTypography($ff-secondary, $fw-regular, $fs-700);
 	text-transform: uppercase;
 	color: $clr-black;
 	text-decoration: underline;
+	width: 100%;
 }
 
 // h3 - I'm a front end, who am i here are some, Hacker News, please feel free
@@ -25,22 +29,22 @@ p {
 }
 
 .sm-button {
-	@include setTypography($ff-secondary, $fw-bold, $fs-400);
-	color: $clr-black;
-	background-color: $clr-pink;
+	@include setTypography($ff-secondary, $fw-bold, $fs-500);
+	color: $clr-white;
+	background-color: $clr-dark-pink;
 	border-radius: $border-radius;
 	border: none;
 	padding: 1rem 0.8rem;
 	margin: 0 5px;
 	text-transform: uppercase;
 	filter: drop-shadow(4px 4px 0 $clr-black);
-	transition: all 0.25s ease-in-out;
+	transition: all 0.15s ease-in-out;
 	display: inline-block;
 	&:hover,
 	&:focus {
 		filter: drop-shadow(0 0 0 $clr-black);
 		transform: translate(4px, 4px);
-		transition: all 0.25s ease-in-out;
+		transition: all 0.15s ease-in-out;
 		cursor: pointer;
 	}
 }

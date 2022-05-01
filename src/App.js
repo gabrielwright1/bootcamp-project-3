@@ -23,7 +23,7 @@ import Card from "./components/Card";
 
 function App() {
 	// state
-	const [burgerProducts, setburgerProducts] = useState([]);
+	const [burgerProducts, setBurgerProducts] = useState([]);
 	const [total, setTotal] = useState(0);
 	const [burgers, setBurgers] = useState([]);
 
@@ -45,7 +45,7 @@ function App() {
 				burgerProductArr.push({ ...data[key], key: key });
 			}
 			// update state
-			setburgerProducts(burgerProductArr);
+			setBurgerProducts(burgerProductArr);
 		});
 
 		// grab the cart list
@@ -59,15 +59,39 @@ function App() {
 			// update state
 			setBurgers(burgerCartArr);
 		});
+
+		// grab total
+		// update local state to the total stored in database
+		get(totalRef).then((snapshot) => {
+			setTotal(snapshot.val().cartTotal);
+		});
 	}, []);
 
+	// ensure that total doesn't go negative
 	useEffect(() => {
-		// update database with new total
-		const database = getDatabase(firebase);
-		const totalId = "-N0yHl4A1PhHDEClucsy";
-		const totalRef = ref(database, `/total/${totalId}`);
-		update(totalRef, { total: total });
+		if (total < 0) {
+			setTotal(0);
+		}
+
+		// update total in database
+		const updateTotalInDb = (totalObj) => {
+			const database = getDatabase(firebase);
+			const totalRef = ref(database, `/total/-N0yHl4A1PhHDEClucsy`);
+			return update(totalRef, totalObj);
+		};
+
+		// only update database if the local state total isn't its on-mount value (0)
+		if (total !== 0) {
+			updateTotalInDb({ cartTotal: total });
+		}
 	}, [total]);
+
+	// this pushes an object to database incase I accidentally delete my total
+	// useEffect(() => {
+	// 	const database = getDatabase(firebase);
+	// 	const totalRef = ref(database, `/total/-N0yHl4A1PhHDEClucsy`);
+	// 	update(totalRef, { cartTotal: total });
+	// }, []);
 
 	const addListItems = (burgerObj) => {
 		// update total in shopping cart
@@ -98,7 +122,7 @@ function App() {
 			<header>
 				<div className="header-container wrapper">
 					<div className="title-container">
-						<h1>Burger Builder</h1>
+						<h1>Mel's drive-in</h1>
 					</div>
 					<div className="shopping-container">
 						<h2>Shopping Cart</h2>
