@@ -17,11 +17,11 @@
 	width: 100%;
 	margin: 0 0 5px 0;
 	.img-container {
-		flex-basis: 55%;
+		flex-basis: 50%;
 		margin: 0 5px 0 0;
 		background-color: $clr-teal;
 		border-radius: $border-radius;
-		padding: 5px;
+		padding: 10px;
 		max-height: 338.15px;
 	}
 	img {
@@ -32,9 +32,13 @@
 }
 
 .shopping-container {
-	width: 30rem;
+	position: absolute;
+	right: 5px;
+	width: calc(50% - 10px);
 	display: flex;
 	flex-direction: column;
 	background-color: $clr-light-blue;
 	border-radius: $border-radius;
+	padding: 0 0 10px 0;
+	box-shadow: 4px 4px 0 black;
 }

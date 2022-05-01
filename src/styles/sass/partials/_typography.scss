@@ -69,6 +69,10 @@ p {
 	h2 {
 		text-align: right;
 	}
+	h3 {
+		margin: 0;
+		padding: 10px;
+	}
 	ul {
 		padding: 0 10px 0 0;
 		margin: 0;
@@ -82,5 +86,8 @@ p {
 	p {
 		text-align: right;
 		margin: auto 0;
+	}
+	[type="submit"] {
+		margin: 0 0.6rem 0 0.4rem;
 	}
 }

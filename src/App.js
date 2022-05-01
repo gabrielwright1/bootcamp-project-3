@@ -134,6 +134,11 @@ function App() {
 							</div>
 							<div className="shopping-container">
 								<h2>Shopping Cart</h2>
+								{burgers.length === 0 ? (
+									<h3>Your cart is empty.</h3>
+								) : (
+									<h3>Items selected:</h3>
+								)}
 								<ul>
 									{burgers.map((burger) => {
 										const { key, name, subtotal, counter } =
@@ -160,6 +165,13 @@ function App() {
 									})}
 								</ul>
 								<h3>Total: $ {total}</h3>
+								{burgers.length === 0 ? (
+									""
+								) : (
+									<button className="sm-button" type="submit">
+										Checkout
+									</button>
+								)}
 							</div>
 						</div>
 					</div>
