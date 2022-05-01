@@ -20,7 +20,6 @@ import firebase from "./firebase";
 
 // components
 import Card from "./components/Card";
-import { sassNull } from "sass";
 
 function App() {
 	// state
