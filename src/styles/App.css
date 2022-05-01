@@ -287,8 +287,12 @@ h2 {
   font-weight: 400;
   font-size: 2.6rem;
   text-transform: uppercase;
-  color: #000000;
-  text-decoration: underline;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px #ff00b8;
+  padding: 10px 30px;
+  text-align: center;
+  margin: 30px 0;
+  background-color: #000000;
   width: 100%;
 }
 
@@ -298,6 +302,9 @@ h3 {
   font-size: 1.2rem;
   text-transform: uppercase;
   color: #000000;
+  text-align: right;
+  border-top: 1px solid #000000;
+  padding: 10px 30px 0 0;
 }
 
 p {
@@ -311,7 +318,7 @@ p {
 .sm-button {
   font-family: "Comfortaa", cursive;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #ffffff;
   background-color: #a60078;
   border-radius: 20px;
@@ -389,7 +396,7 @@ ul {
 }
 
 .card-container {
-  margin: 10px auto;
+  margin: 10px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -459,9 +466,33 @@ ul {
   margin: 30px 0;
 }
 
+.header-inner-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin: 0;
+}
+.header-inner-container .img-container {
+  padding: 10px;
+  background-color: #6bbfaf;
+  border-radius: 20px;
+}
+.header-inner-container img {
+  border-radius: 20px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .shopping-container {
+  position: absolute;
+  right: 0;
   width: 30rem;
-  padding: 0 30px 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -473,17 +504,8 @@ ul {
   border-radius: 20px;
 }
 .shopping-container ul {
-  padding: 0;
+  padding: 0 30px 0 0;
   margin: 0;
-}
-.shopping-container h2 {
-  text-align: right;
-  margin: 10px 0;
-}
-.shopping-container h3 {
-  text-align: right;
-  border-top: 1px solid #000000;
-  padding-top: 10px;
 }
 .shopping-container li {
   display: -webkit-box;
@@ -505,8 +527,7 @@ ul {
 
 .menu {
   background-color: #febd0a;
-  padding: 0 10px;
-  margin: 30px auto;
+  margin: 10px auto;
   border-radius: 20px;
   text-align: center;
 }
