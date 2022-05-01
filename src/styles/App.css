@@ -290,9 +290,10 @@ h2 {
 
 h3 {
   font-family: "Comfortaa", cursive;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 1.2rem;
-  color: #ffffff;
+  text-transform: uppercase;
+  color: #000000;
 }
 
 p {
@@ -327,6 +328,7 @@ p {
           transform: translate(4px, 4px);
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+  cursor: pointer;
 }
 
 .burgerDetails li {
@@ -451,7 +453,7 @@ ul {
 }
 
 .shopping-container {
-  width: 25rem;
+  width: 30rem;
   padding: 0 30px 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -463,10 +465,16 @@ ul {
 }
 .shopping-container ul {
   padding: 0;
+  margin: 0;
 }
 .shopping-container h2 {
   text-align: right;
   margin: 10px 0;
+}
+.shopping-container h3 {
+  text-align: right;
+  border-top: 1px solid #000000;
+  padding-top: 10px;
 }
 .shopping-container li {
   display: -webkit-box;

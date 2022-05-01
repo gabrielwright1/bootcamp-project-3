@@ -5,38 +5,26 @@ import { getDatabase, ref, onValue, push } from "firebase/database";
 // config
 import firebase from "../firebase";
 
-const Card = ({ addListItems, burgerImage, imageId }) => {
+const Card = ({ addListItems, burgerProduct }) => {
+	const { name, imgUrl, price } = burgerProduct;
 	// state
-	const [name, setName] = useState("Burger");
 	const [counter, setCounter] = useState(0);
-	const [price, setPrice] = useState(0);
 	const [subtotal, setSubtotal] = useState(0);
-
-	// counters (add)
-	const handleAdd = () => {
-		setCounter(counter + 1);
-	};
-
-	// counters (subtract)
-	const handleSubtract = () => {
-		if (counter > 0) {
-			setCounter(counter - 1);
-		}
-	};
-
-	useEffect(() => {
-		// On mount - randomize prices for each burger
-		const randomPrice = Math.floor(Math.random() * 10 + 1);
-		setPrice(randomPrice);
-		// randomize the name of each whopper
-		setName(`Burger #${randomPrice}`);
-	}, []);
 
 	// When counter is changed - update subtotal
 	useEffect(() => {
 		setSubtotal(price * counter);
 	}, [counter]);
 
+	const handleAdd = () => {
+		setCounter(counter + 1);
+	};
+
+	const handleSubtract = () => {
+		if (counter > 0) {
+			setCounter(counter - 1);
+		}
+	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
@@ -47,7 +35,6 @@ const Card = ({ addListItems, burgerImage, imageId }) => {
 				price: price,
 				counter: counter,
 				subtotal: subtotal,
-				imageId: imageId,
 			};
 			addListItems(burgerObj);
 		} else {
@@ -64,10 +51,7 @@ const Card = ({ addListItems, burgerImage, imageId }) => {
 			className="burgerCard"
 		>
 			<div className="img-container">
-				<img
-					src={burgerImage.urls.small}
-					alt={burgerImage.alt_description}
-				/>
+				<img src={imgUrl} alt={name} />
 			</div>
 			<ul className="burgerDetails">
 				<li className="burgerName">Name: {name}</li>

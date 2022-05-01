@@ -20,69 +20,79 @@ import firebase from "./firebase";
 
 // components
 import Card from "./components/Card";
+import { sassNull } from "sass";
 
 function App() {
-	// tom tom map api
-	const unsplashAPIKey = "JaPZndHAm8KHEUlIjQI_4rMZsNeO5zBNLdTkqb6XVh0";
-
 	// state
-	const [burgerImages, setBurgerImages] = useState([]);
+	const [burgerProducts, setburgerProducts] = useState([]);
 	const [total, setTotal] = useState(0);
 	const [burgers, setBurgers] = useState([]);
 
-	// On Load - Get burger images from unsplash
+	// query firebase and get the burger products
 	useEffect(() => {
-		axios({
-			url: `https://api.unsplash.com/search/photos`,
-			method: "GET",
-			dataResponse: "json",
-			params: {
-				client_id: unsplashAPIKey,
-				query: "cheeseburger",
-				orientation: "landscape",
-			},
-		}).then((response) => {
-			const burgerImageArr = response.data.results;
-			setBurgerImages(burgerImageArr);
-		});
-	}, []);
+		const totalId = "-N0yHl4A1PhHDEClucsy";
 
-	// On load - grab the firebase data and update local state
-	useEffect(() => {
 		const database = getDatabase(firebase);
-		const dbRef = ref(database);
+		const productRef = ref(database, `/products/`);
+		const cartRef = ref(database, `/cart/`);
+		const totalRef = ref(database, `/total/${totalId}`);
 
-		onValue(dbRef, (response) => {
-			const newArr = [];
+		// grab the product list
+		onValue(productRef, (response) => {
+			const burgerProductArr = [];
 			const data = response.val();
 			for (let key in data) {
 				// push the data as well as the key into the new array
-				newArr.push({ ...data[key], key: key });
+				burgerProductArr.push({ ...data[key], key: key });
 			}
 			// update state
-			setBurgers(newArr);
+			setburgerProducts(burgerProductArr);
+		});
+
+		// grab the cart list
+		onValue(cartRef, (response) => {
+			const burgerCartArr = [];
+			const data = response.val();
+			for (let key in data) {
+				// push the data as well as the key into the new array
+				burgerCartArr.push({ ...data[key], key: key });
+			}
+			// update state
+			setBurgers(burgerCartArr);
 		});
 	}, []);
 
+	useEffect(() => {
+		// update database with new total
+		const database = getDatabase(firebase);
+		const totalId = "-N0yHl4A1PhHDEClucsy";
+		const totalRef = ref(database, `/total/${totalId}`);
+		update(totalRef, { total: total });
+	}, [total]);
+
 	const addListItems = (burgerObj) => {
 		// update total in shopping cart
-		const { subtotal, imageId } = burgerObj;
+		const { subtotal } = burgerObj;
 		setTotal(total + subtotal);
 
 		// add burger object to database
 		const database = getDatabase(firebase);
-		const dbRef = ref(database);
+		const cartRef = ref(database, `/cart/`);
 
-		push(dbRef, burgerObj);
+		// add items to cart in database
+		push(cartRef, burgerObj);
 	};
 
-	const handleRemove = (burgerId) => {
+	const handleRemove = (burgerId, subtotal) => {
 		const database = getDatabase(firebase);
-		const dbRef = ref(database, `/${burgerId}`);
-		remove(dbRef);
+		const cartRef = ref(database, `/cart/${burgerId}`);
+
+		// update total in shopping cart
+		setTotal(total - subtotal);
+
+		// remove from database
+		remove(cartRef);
 	};
-	// console.log(burgers);
-	// console.log(dbKey);
 
 	return (
 		<div className="App">
@@ -104,7 +114,7 @@ function App() {
 										<button
 											className="sm-button"
 											onClick={() => {
-												handleRemove(key);
+												handleRemove(key, subtotal);
 											}}
 										>
 											Remove
@@ -113,6 +123,7 @@ function App() {
 								);
 							})}
 						</ul>
+						<h3>Total: $ {total}</h3>
 					</div>
 				</div>
 			</header>
@@ -120,13 +131,12 @@ function App() {
 				<section className="menu wrapper">
 					<h2>Menu</h2>
 					<div className="card-container">
-						{burgerImages.map((burgerImage) => {
+						{burgerProducts.map((burgerProduct) => {
 							return (
 								<Card
-									key={burgerImage.id}
-									imageId={burgerImage.id}
+									key={burgerProduct.key}
 									addListItems={addListItems}
-									burgerImage={burgerImage}
+									burgerProduct={burgerProduct}
 								/>
 							);
 						})}
