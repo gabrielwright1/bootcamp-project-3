@@ -126,12 +126,12 @@ function App() {
 							<h1>Mel's drive-in</h1>
 						</div>
 						<div className="header-inner-container">
-							{/* <div className="img-container">
-							<img
-								src="https://images.unsplash.com/photo-1567108485555-230071a08521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80"
-								alt="the front of Mel's diner at nighttime"
-							/>
-						</div> */}
+							<div className="img-container">
+								<img
+									src="https://images.unsplash.com/photo-1513918573039-35f42ae13895?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+									alt="an old 50s car in front of a diner"
+								/>
+							</div>
 							<div className="shopping-container">
 								<h2>Shopping Cart</h2>
 								<ul>

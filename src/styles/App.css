@@ -280,6 +280,7 @@ h1 {
   background-color: #000000;
   text-shadow: 4px 4px 4px #c7eaed;
   padding: 10px 0;
+  margin: 30px 0;
 }
 
 h2 {
@@ -289,7 +290,7 @@ h2 {
   text-transform: uppercase;
   color: #ffffff;
   text-shadow: 1px 1px 4px #ff00b8;
-  padding: 10px 30px;
+  padding: 10px;
   text-align: center;
   margin: 30px 0;
   background-color: #000000;
@@ -304,7 +305,7 @@ h3 {
   color: #000000;
   text-align: right;
   border-top: 1px solid #000000;
-  padding: 10px 30px 0 0;
+  padding: 10px 10px 0 0;
 }
 
 p {
@@ -350,11 +351,36 @@ p {
   color: #000000;
 }
 
+.shopping-container h2 {
+  text-align: right;
+}
+.shopping-container ul {
+  padding: 0 10px 0 0;
+  margin: 0;
+}
+.shopping-container li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px 0;
+}
+.shopping-container p {
+  text-align: right;
+  margin: auto 0;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 846px;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
 }
@@ -382,13 +408,12 @@ p {
 }
 
 body {
-  background: url("https://images.unsplash.com/photo-1567108485555-230071a08521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80") center;
-  background-color: #000000;
-  overflow-x: hidden;
-  -o-object-fit: fill;
-     object-fit: fill;
+  background-image: url("https://images.unsplash.com/photo-1567108485555-230071a08521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80");
   background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
 }
 
 a {
@@ -400,10 +425,9 @@ ul {
 }
 
 .bg-img-container {
-  background-color: red;
+  border-radius: 20px;
   display: block;
-  max-width: 870px;
-  padding: 10px 0;
+  padding: 5px;
   background-image: url("../../../assets/bg-checker-dark.png");
 }
 
@@ -452,9 +476,9 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .header-container {
@@ -468,14 +492,11 @@ ul {
           align-items: flex-end;
 }
 .header-container .title-container {
-  margin: 0 auto 10px auto;
-  background-color: #a60078;
+  margin: 0 auto 5px 0;
+  background-color: #ff00b8;
   border-radius: 20px;
   width: 100%;
   text-align: center;
-}
-.header-container h1 {
-  margin: 30px 0;
 }
 
 .header-inner-container {
@@ -487,12 +508,16 @@ ul {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  margin: 0;
+  margin: 0 0 5px 0;
 }
 .header-inner-container .img-container {
-  padding: 10px;
+  -ms-flex-preferred-size: 55%;
+      flex-basis: 55%;
+  margin: 0 5px 0 0;
   background-color: #6bbfaf;
   border-radius: 20px;
+  padding: 5px;
+  max-height: 338.15px;
 }
 .header-inner-container img {
   border-radius: 20px;
@@ -502,8 +527,6 @@ ul {
 }
 
 .shopping-container {
-  position: absolute;
-  right: 0;
   width: 30rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -515,33 +538,12 @@ ul {
   background-color: #c7eaed;
   border-radius: 20px;
 }
-.shopping-container ul {
-  padding: 0 30px 0 0;
-  margin: 0;
-}
-.shopping-container li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 10px 0;
-}
-.shopping-container p {
-  text-align: right;
-  margin: auto 0 auto 20px;
-}
 
 .menu {
   background-color: #febd0a;
-  margin: 10px auto;
   border-radius: 20px;
   text-align: center;
+  margin: 0 auto;
 }
 .menu.wrapper {
   display: -webkit-box;
