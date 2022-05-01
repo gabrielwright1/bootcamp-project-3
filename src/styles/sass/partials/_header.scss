@@ -1,16 +1,9 @@
-// header {
-// 	background-image: url("https://images.unsplash.com/photo-1567108485555-230071a08521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80");
-// 	object-fit: cover;
-// 	background-position: center;
-// 	height: 50rem;
-// }
-
 .header-container {
 	flex-direction: column;
 	border-radius: $border-radius;
 	align-items: flex-end;
 	.title-container {
-		margin: 10px auto;
+		margin: 0 auto 10px auto;
 		background-color: $clr-dark-pink;
 		border-radius: $border-radius;
 		width: 100%;

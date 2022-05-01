@@ -382,9 +382,13 @@ p {
 }
 
 body {
+  background: url("https://images.unsplash.com/photo-1567108485555-230071a08521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80") center;
+  background-color: #000000;
   overflow-x: hidden;
-  background-image: url("../../../assets/bg-checker-dark.png");
+  -o-object-fit: fill;
+     object-fit: fill;
   background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 a {
@@ -393,6 +397,14 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+.bg-img-container {
+  background-color: red;
+  display: block;
+  max-width: 870px;
+  padding: 10px 0;
+  background-image: url("../../../assets/bg-checker-dark.png");
 }
 
 .card-container {
@@ -456,7 +468,7 @@ ul {
           align-items: flex-end;
 }
 .header-container .title-container {
-  margin: 10px auto;
+  margin: 0 auto 10px auto;
   background-color: #a60078;
   border-radius: 20px;
   width: 100%;

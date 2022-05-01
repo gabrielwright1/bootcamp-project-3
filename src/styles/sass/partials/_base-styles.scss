@@ -1,7 +1,11 @@
 body {
+	background: url("https://images.unsplash.com/photo-1567108485555-230071a08521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80")
+		center;
+	background-color: $clr-black;
 	overflow-x: hidden;
-	background-image: url("../../../assets/bg-checker-dark.png");
+	object-fit: fill;
 	background-attachment: fixed;
+	background-repeat: no-repeat;
 }
 
 a {
@@ -10,4 +14,12 @@ a {
 
 ul {
 	list-style-type: none;
+}
+
+.bg-img-container {
+	background-color: red;
+	display: block;
+	max-width: 870px;
+	padding: 10px 0;
+	background-image: url("../../../assets/bg-checker-dark.png");
 }

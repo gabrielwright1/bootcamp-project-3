@@ -119,63 +119,68 @@ function App() {
 
 	return (
 		<div className="App">
-			<header>
-				<div className="header-container wrapper">
-					<div className="title-container">
-						<h1>Mel's drive-in</h1>
-					</div>
-					<div className="header-inner-container">
-						<div className="img-container">
+			<div className="bg-img-container wrapper">
+				<header>
+					<div className="header-container wrapper">
+						<div className="title-container">
+							<h1>Mel's drive-in</h1>
+						</div>
+						<div className="header-inner-container">
+							{/* <div className="img-container">
 							<img
 								src="https://images.unsplash.com/photo-1567108485555-230071a08521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80"
 								alt="the front of Mel's diner at nighttime"
 							/>
-						</div>
-						<div className="shopping-container">
-							<h2>Shopping Cart</h2>
-							<ul>
-								{burgers.map((burger) => {
-									const { key, name, subtotal, counter } =
-										burger;
-									return (
-										<li key={key}>
-											<p>
-												{counter} x {name} = ${" "}
-												{subtotal}
-											</p>
-											<button
-												className="sm-button"
-												onClick={() => {
-													handleRemove(key, subtotal);
-												}}
-											>
-												Remove
-											</button>
-										</li>
-									);
-								})}
-							</ul>
-							<h3>Total: $ {total}</h3>
+						</div> */}
+							<div className="shopping-container">
+								<h2>Shopping Cart</h2>
+								<ul>
+									{burgers.map((burger) => {
+										const { key, name, subtotal, counter } =
+											burger;
+										return (
+											<li key={key}>
+												<p>
+													{counter} x {name} = ${" "}
+													{subtotal}
+												</p>
+												<button
+													className="sm-button"
+													onClick={() => {
+														handleRemove(
+															key,
+															subtotal
+														);
+													}}
+												>
+													Remove
+												</button>
+											</li>
+										);
+									})}
+								</ul>
+								<h3>Total: $ {total}</h3>
+							</div>
 						</div>
 					</div>
-				</div>
-			</header>
-			<main>
-				<section className="menu wrapper">
-					<h2>Menu</h2>
-					<div className="card-container">
-						{burgerProducts.map((burgerProduct) => {
-							return (
-								<Card
-									key={burgerProduct.key}
-									addListItems={addListItems}
-									burgerProduct={burgerProduct}
-								/>
-							);
-						})}
-					</div>
-				</section>
-			</main>
+				</header>
+				<main>
+					<section className="menu wrapper">
+						<h2>Menu</h2>
+						<div className="card-container">
+							{burgerProducts.map((burgerProduct) => {
+								return (
+									<Card
+										key={burgerProduct.key}
+										addListItems={addListItems}
+										burgerProduct={burgerProduct}
+									/>
+								);
+							})}
+						</div>
+					</section>
+				</main>
+			</div>
 			<footer></footer>
 		</div>
 	);
