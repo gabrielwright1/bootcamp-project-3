@@ -3,11 +3,12 @@
 	border-radius: $border-radius;
 	align-items: flex-end;
 	.title-container {
-		margin: 0 auto 5px 0;
+		margin: 0 auto 15px 0;
 		background-color: $clr-pink;
 		border-radius: $border-radius;
 		width: 100%;
 		text-align: center;
+		box-shadow: $box-shadow;
 	}
 }
 .header-inner-container {
@@ -15,14 +16,14 @@
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	margin: 0 0 5px 0;
+	margin: 0 0 15px 0;
 	.img-container {
 		flex-basis: 50%;
-		margin: 0 5px 0 0;
 		background-color: $clr-teal;
 		border-radius: $border-radius;
 		padding: 10px;
 		max-height: 338.15px;
+		box-shadow: $box-shadow;
 	}
 	img {
 		border-radius: $border-radius;
@@ -33,12 +34,13 @@
 
 .shopping-container {
 	position: absolute;
+	z-index: 30;
 	right: 5px;
-	width: calc(50% - 10px);
+	width: calc(50% - 15px);
 	display: flex;
 	flex-direction: column;
 	background-color: $clr-light-blue;
 	border-radius: $border-radius;
 	padding: 0 0 10px 0;
-	box-shadow: 4px 4px 0 black;
+	box-shadow: $box-shadow;
 }

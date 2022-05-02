@@ -46,42 +46,44 @@ const Card = ({ addListItems, burgerProduct }) => {
 				handleSubmit(e);
 			}}
 			action="submit"
-			className="burgerCard"
+			className="burger-card"
 		>
 			<div className="img-container">
 				<img src={imgUrl} alt={name} />
 			</div>
-			<ul className="burgerDetails">
-				<li className="burgerName">Name: {name}</li>
-				<li className="burgerPrice">Price: $ {price}</li>
-				<li className="burgerCount">Counter: {counter}</li>
-				<li className="burgerSubtotal">Subtotal: $ {subtotal}</li>
+			<ul className="burger-details">
+				<li className="burger-name">Name: {name}</li>
+				<li className="burger-price">Price: $ {price}</li>
+				<li className="burger-counter">Counter: {counter}</li>
+				<li className="burger-subtotal">Subtotal: $ {subtotal}</li>
 			</ul>
 			<div className="card-buttons">
-				{/* Increase counter */}
-				<label htmlFor="add-button" className="sr-only">
-					Increase the counter
-				</label>
-				<button
-					id="add-button"
-					className="sm-button"
-					type="button"
-					onClick={handleAdd}
-				>
-					Add
-				</button>
-				{/* Decrease counter */}
-				<label htmlFor="remove-button" className="sr-only">
-					Decrease the counter
-				</label>
-				<button
-					id="remove-button"
-					className="sm-button"
-					type="button"
-					onClick={handleSubtract}
-				>
-					Remove
-				</button>
+				<div className="counte-buttons">
+					{/* Increase counter */}
+					<label htmlFor="add-button" className="sr-only">
+						Increase the counter
+					</label>
+					<button
+						id="add-button"
+						className="sm-button"
+						type="button"
+						onClick={handleAdd}
+					>
+						Add
+					</button>
+					{/* Decrease counter */}
+					<label htmlFor="remove-button" className="sr-only">
+						Decrease the counter
+					</label>
+					<button
+						id="remove-button"
+						className="sm-button"
+						type="button"
+						onClick={handleSubtract}
+					>
+						Remove
+					</button>
+				</div>
 				{/* Add to Cart */}
 				<label htmlFor="add-to-cart-button" className="sr-only">
 					Add item(s) to cart

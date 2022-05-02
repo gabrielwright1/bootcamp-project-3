@@ -1,26 +1,28 @@
 .card-container {
-	margin: 10px 10px;
+	margin: 0 10px 10px 10px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	background-color: $clr-teal;
-	padding: 10px;
 	border-radius: $border-radius;
 	height: auto;
-	form {
-		margin: 0 0 20px 0;
-	}
+
 	.img-container {
-		max-height: 275px;
+		max-height: 267px;
 		overflow-y: hidden;
 		border-radius: $border-radius;
+		box-shadow: $box-shadow;
 	}
 }
+.burger-card {
+	margin: 20px 0;
+}
 
-.burgerDetails {
+.burger-details {
 	border-radius: $border-radius;
 	background-color: $clr-white;
+	box-shadow: $box-shadow;
 	padding: 20px 10px;
 	li {
 		text-align: center;
@@ -30,5 +32,5 @@
 .card-buttons {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: space-between;
 }

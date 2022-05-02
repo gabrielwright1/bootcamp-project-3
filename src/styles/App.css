@@ -278,7 +278,7 @@ h1 {
   font-size: 5.5rem;
   color: #ffffff;
   background-color: #000000;
-  text-shadow: 4px 4px 4px #c7eaed;
+  text-shadow: 4px 4px 4px #61dafb;
   padding: 10px 0;
   margin: 30px 0;
 }
@@ -292,7 +292,7 @@ h2 {
   text-shadow: 1px 1px 4px #ff00b8;
   padding: 10px;
   text-align: center;
-  margin: 30px 0;
+  margin: 20px 0;
   background-color: #000000;
   width: 100%;
 }
@@ -343,7 +343,7 @@ p {
   cursor: pointer;
 }
 
-.burgerDetails li {
+.burger-details li {
   font-family: "Comfortaa", cursive;
   font-weight: 400;
   font-size: 1.1rem;
@@ -379,13 +379,8 @@ p {
   text-align: right;
   margin: auto 0;
 }
-
-.checkout-form {
-  padding: 0 10px 0 5px;
-}
-.checkout-form [type=submit] {
-  width: 100%;
-  margin: 0;
+.shopping-container [type=submit] {
+  margin: 0 10px 0 5px;
 }
 
 .wrapper {
@@ -439,12 +434,12 @@ ul {
 .bg-img-container {
   border-radius: 20px;
   display: block;
-  padding: 5px;
+  padding: 10px;
   background-image: url("../../../assets/bg-checker-dark.png");
 }
 
 .card-container {
-  margin: 10px 10px;
+  margin: 0 10px 10px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -454,29 +449,33 @@ ul {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   background-color: #6bbfaf;
-  padding: 10px;
   border-radius: 20px;
   height: auto;
 }
-.card-container form {
-  margin: 0 0 20px 0;
-}
 .card-container .img-container {
-  max-height: 275px;
+  max-height: 267px;
   overflow-y: hidden;
   border-radius: 20px;
+  -webkit-box-shadow: 4px 4px 0 #000000;
+          box-shadow: 4px 4px 0 #000000;
 }
 
-.burgerDetails {
+.burger-card {
+  margin: 20px 0;
+}
+
+.burger-details {
   border-radius: 20px;
   background-color: #ffffff;
+  -webkit-box-shadow: 4px 4px 0 #000000;
+          box-shadow: 4px 4px 0 #000000;
   padding: 20px 10px;
 }
-.burgerDetails li {
+.burger-details li {
   text-align: center;
 }
 
@@ -488,9 +487,9 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .header-container {
@@ -504,11 +503,13 @@ ul {
           align-items: flex-end;
 }
 .header-container .title-container {
-  margin: 0 auto 5px 0;
+  margin: 0 auto 15px 0;
   background-color: #ff00b8;
   border-radius: 20px;
   width: 100%;
   text-align: center;
+  -webkit-box-shadow: 4px 4px 0 #000000;
+          box-shadow: 4px 4px 0 #000000;
 }
 
 .header-inner-container {
@@ -520,16 +521,17 @@ ul {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  margin: 0 0 5px 0;
+  margin: 0 0 15px 0;
 }
 .header-inner-container .img-container {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
-  margin: 0 5px 0 0;
   background-color: #6bbfaf;
   border-radius: 20px;
   padding: 10px;
   max-height: 338.15px;
+  -webkit-box-shadow: 4px 4px 0 #000000;
+          box-shadow: 4px 4px 0 #000000;
 }
 .header-inner-container img {
   border-radius: 20px;
@@ -540,8 +542,9 @@ ul {
 
 .shopping-container {
   position: absolute;
+  z-index: 30;
   right: 5px;
-  width: calc(50% - 10px);
+  width: calc(50% - 15px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -552,8 +555,8 @@ ul {
   background-color: #c7eaed;
   border-radius: 20px;
   padding: 0 0 10px 0;
-  -webkit-box-shadow: 4px 4px 0 black;
-          box-shadow: 4px 4px 0 black;
+  -webkit-box-shadow: 4px 4px 0 #000000;
+          box-shadow: 4px 4px 0 #000000;
 }
 
 .menu {
@@ -561,6 +564,8 @@ ul {
   border-radius: 20px;
   text-align: center;
   margin: 0 auto;
+  -webkit-box-shadow: 4px 4px 0 #000000;
+          box-shadow: 4px 4px 0 #000000;
 }
 .menu.wrapper {
   display: -webkit-box;

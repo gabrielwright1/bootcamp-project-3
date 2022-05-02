@@ -3,7 +3,7 @@ h1 {
 	@include setTypography($ff-secondary, $fw-regular, $fs-800);
 	color: $clr-white;
 	background-color: $clr-black;
-	text-shadow: (4px 4px 4px $clr-light-blue);
+	text-shadow: (4px 4px 4px $clr-dark-blue);
 	padding: 10px 0;
 	margin: 30px 0;
 }
@@ -16,7 +16,7 @@ h2 {
 	text-shadow: (1px 1px 4px $clr-pink);
 	padding: 10px;
 	text-align: center;
-	margin: 30px 0;
+	margin: 20px 0;
 	background-color: $clr-black;
 	width: 100%;
 }
@@ -57,7 +57,7 @@ p {
 	}
 }
 
-.burgerDetails {
+.burger-details {
 	li {
 		@include setTypography($ff-secondary, $fw-regular, $fs-400);
 		text-transform: uppercase;
@@ -87,12 +87,7 @@ p {
 		text-align: right;
 		margin: auto 0;
 	}
-}
-
-.checkout-form {
-	padding: 0 10px 0 5px;
 	[type="submit"] {
-		width: 100%;
-		margin: 0;
+		margin: 0 10px 0 5px;
 	}
 }
