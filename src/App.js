@@ -74,19 +74,11 @@ function App() {
 		}
 	}, [total, burgers]);
 
-	// update total in database
 	const updateTotalInDb = (totalObj) => {
 		const database = getDatabase(firebase);
 		const totalRef = ref(database, `/total/-N0yHl4A1PhHDEClucsy`);
 		return update(totalRef, totalObj);
 	};
-
-	// this pushes an object to database incase I accidentally delete my total
-	// useEffect(() => {
-	// 	const database = getDatabase(firebase);
-	// 	const totalRef = ref(database, `/total/-N0yHl4A1PhHDEClucsy`);
-	// 	update(totalRef, { cartTotal: total });
-	// }, []);
 
 	const addListItems = (burgerObj) => {
 		// update total in shopping cart
@@ -115,6 +107,28 @@ function App() {
 		if (burgers.length === 1) {
 			updateTotalInDb({ cartTotal: 0 });
 		}
+	};
+
+	const clearCartInDb = () => {
+		// reset database cart
+		const database = getDatabase(firebase);
+		const cartRef = ref(database, `/cart/`);
+
+		remove(cartRef);
+	};
+
+	const handleCheckout = (event) => {
+		event.preventDefault();
+
+		// reset local state
+		setBurgers([]);
+		setTotal(0);
+
+		// reset database total
+		updateTotalInDb({ cartTotal: 0 });
+
+		// reset cart in database
+		clearCartInDb();
 	};
 
 	return (
@@ -165,12 +179,21 @@ function App() {
 									})}
 								</ul>
 								<h3>Total: $ {total}</h3>
-								{burgers.length === 0 ? (
-									""
-								) : (
-									<button className="sm-button" type="submit">
-										Checkout
-									</button>
+								{burgers.length === 0 ? null : (
+									<form
+										className="checkout-form"
+										onSubmit={(event) =>
+											handleCheckout(event)
+										}
+										action="submit"
+									>
+										<button
+											className="sm-button"
+											type="submit"
+										>
+											Checkout
+										</button>
+									</form>
 								)}
 							</div>
 						</div>

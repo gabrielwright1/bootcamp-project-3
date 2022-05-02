@@ -379,8 +379,13 @@ p {
   text-align: right;
   margin: auto 0;
 }
-.shopping-container [type=submit] {
-  margin: 0 0.6rem 0 0.4rem;
+
+.checkout-form {
+  padding: 0 10px 0 5px;
+}
+.checkout-form [type=submit] {
+  width: 100%;
+  margin: 0;
 }
 
 .wrapper {
