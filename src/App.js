@@ -67,24 +67,19 @@ function App() {
 		});
 	}, []);
 
-	// ensure that total doesn't go negative
 	useEffect(() => {
-		if (total < 0) {
-			setTotal(0);
-		}
-
-		// update total in database
-		const updateTotalInDb = (totalObj) => {
-			const database = getDatabase(firebase);
-			const totalRef = ref(database, `/total/-N0yHl4A1PhHDEClucsy`);
-			return update(totalRef, totalObj);
-		};
-
-		// only update database if the local state total isn't its on-mount value (0)
 		if (total !== 0) {
+			// only update database if the local total isn't its on-mount value of 0
 			updateTotalInDb({ cartTotal: total });
 		}
-	}, [total]);
+	}, [total, burgers]);
+
+	// update total in database
+	const updateTotalInDb = (totalObj) => {
+		const database = getDatabase(firebase);
+		const totalRef = ref(database, `/total/-N0yHl4A1PhHDEClucsy`);
+		return update(totalRef, totalObj);
+	};
 
 	// this pushes an object to database incase I accidentally delete my total
 	// useEffect(() => {
@@ -115,6 +110,11 @@ function App() {
 
 		// remove from database
 		remove(cartRef);
+
+		// if its the last item in the cart, then clear the database total
+		if (burgers.length === 1) {
+			updateTotalInDb({ cartTotal: 0 });
+		}
 	};
 
 	return (
