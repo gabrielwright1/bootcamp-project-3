@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Fasthand&display=swap");
+
 h1 {
-	@include setTypography($ff-secondary, $fw-regular, $fs-800);
+	@include setTypography($ff-primary, $fw-regular, $fs-800);
 	color: $clr-white;
 	background-color: $clr-black;
 	text-shadow: (4px 4px 4px $clr-dark-blue);

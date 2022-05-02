@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Fasthand&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -273,9 +273,9 @@ img {
 }
 
 h1 {
-  font-family: "Comfortaa", cursive;
+  font-family: "Fasthand", cursive;
   font-weight: 400;
-  font-size: 5.5rem;
+  font-size: 6.5rem;
   color: #ffffff;
   background-color: #000000;
   text-shadow: 4px 4px 4px #61dafb;
