@@ -1,3 +1,6 @@
+// components
+import CheckoutItem from "./CheckoutItem";
+
 const CheckoutItems = ({ burgers, handleRemove }) => {
 	return (
 		<>
@@ -9,21 +12,12 @@ const CheckoutItems = ({ burgers, handleRemove }) => {
 			)}
 			<ul>
 				{burgers.map((burger) => {
-					const { key, name, subtotal, counter } = burger;
 					return (
-						<li key={key}>
-							<p>
-								{counter} x {name} = $ {subtotal}
-							</p>
-							<button
-								className="sm-button"
-								onClick={() => {
-									handleRemove(key, subtotal);
-								}}
-							>
-								Remove
-							</button>
-						</li>
+						<CheckoutItem
+							key={burger.key}
+							burger={burger}
+							handleRemove={handleRemove}
+						/>
 					);
 				})}
 			</ul>
