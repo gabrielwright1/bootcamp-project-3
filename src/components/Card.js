@@ -58,7 +58,7 @@ const Card = ({ addListItems, burgerProduct }) => {
 				<li className="burger-subtotal">Subtotal: $ {subtotal}</li>
 			</ul>
 			<div className="card-buttons">
-				<div className="counte-buttons">
+				<div className="counter-buttons">
 					{/* Increase counter */}
 					<label htmlFor="add-button" className="sr-only">
 						Increase the counter
