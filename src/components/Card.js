@@ -52,7 +52,7 @@ const Card = ({ addListItems, burgerProduct }) => {
 				<img src={imgUrl} alt={name} />
 			</div>
 			<ul className="burger-details">
-				<li className="burger-name">Name: {name}</li>
+				<li className="burger-name">{name}</li>
 				<li className="burger-price">Price: $ {price}</li>
 				<li className="burger-counter">Counter: {counter}</li>
 				<li className="burger-subtotal">Subtotal: $ {subtotal}</li>
