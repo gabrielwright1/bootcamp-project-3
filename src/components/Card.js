@@ -1,15 +1,13 @@
 // modules
 import { useState, useEffect } from "react";
-import { getDatabase, ref, onValue, push } from "firebase/database";
-
-// config
-import firebase from "../firebase";
 
 const Card = ({ addListItems, burgerProduct }) => {
-	const { name, imgUrl, price } = burgerProduct;
 	// state
 	const [counter, setCounter] = useState(0);
 	const [subtotal, setSubtotal] = useState(0);
+
+	// destructure burger
+	const { name, imgUrl, price } = burgerProduct;
 
 	// When counter is changed - update subtotal
 	useEffect(() => {
@@ -60,17 +58,39 @@ const Card = ({ addListItems, burgerProduct }) => {
 				<li className="burgerSubtotal">Subtotal: $ {subtotal}</li>
 			</ul>
 			<div className="card-buttons">
-				<button className="sm-button" type="button" onClick={handleAdd}>
+				{/* Increase counter */}
+				<label htmlFor="add-button" className="sr-only">
+					Increase the counter
+				</label>
+				<button
+					id="add-button"
+					className="sm-button"
+					type="button"
+					onClick={handleAdd}
+				>
 					Add
 				</button>
+				{/* Decrease counter */}
+				<label htmlFor="remove-button" className="sr-only">
+					Decrease the counter
+				</label>
 				<button
+					id="remove-button"
 					className="sm-button"
 					type="button"
 					onClick={handleSubtract}
 				>
 					Remove
 				</button>
-				<button className="sm-button" type="submit">
+				{/* Add to Cart */}
+				<label htmlFor="add-to-cart-button" className="sr-only">
+					Add item(s) to cart
+				</label>
+				<button
+					id="add-to-cart-button"
+					className="sm-button"
+					type="submit"
+				>
 					Add to cart
 				</button>
 			</div>

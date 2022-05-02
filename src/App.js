@@ -3,12 +3,10 @@ import "./styles/sass/App.scss";
 
 // modules
 import { useEffect, useState } from "react";
-import axios from "axios";
 import {
 	getDatabase,
 	ref,
 	onValue,
-	set,
 	push,
 	remove,
 	get,
@@ -20,6 +18,7 @@ import firebase from "./firebase";
 
 // components
 import Card from "./components/Card";
+import ShoppingCart from "./components/ShoppingCart";
 
 function App() {
 	// state
@@ -72,7 +71,7 @@ function App() {
 			// only update database if the local total isn't its on-mount value of 0
 			updateTotalInDb({ cartTotal: total });
 		}
-	}, [total, burgers]);
+	}, [total]);
 
 	const updateTotalInDb = (totalObj) => {
 		const database = getDatabase(firebase);
@@ -120,6 +119,9 @@ function App() {
 	const handleCheckout = (event) => {
 		event.preventDefault();
 
+		// confirmation message
+		alert("Thank you for your purchase!");
+
 		// reset local state
 		setBurgers([]);
 		setTotal(0);
@@ -146,56 +148,12 @@ function App() {
 									alt="an old 50s car in front of a diner"
 								/>
 							</div>
-							<div className="shopping-container">
-								<h2>Shopping Cart</h2>
-								{burgers.length === 0 ? (
-									<h3>Your cart is empty.</h3>
-								) : (
-									<h3>Items selected:</h3>
-								)}
-								<ul>
-									{burgers.map((burger) => {
-										const { key, name, subtotal, counter } =
-											burger;
-										return (
-											<li key={key}>
-												<p>
-													{counter} x {name} = ${" "}
-													{subtotal}
-												</p>
-												<button
-													className="sm-button"
-													onClick={() => {
-														handleRemove(
-															key,
-															subtotal
-														);
-													}}
-												>
-													Remove
-												</button>
-											</li>
-										);
-									})}
-								</ul>
-								<h3>Total: $ {total}</h3>
-								{burgers.length === 0 ? null : (
-									<form
-										className="checkout-form"
-										onSubmit={(event) =>
-											handleCheckout(event)
-										}
-										action="submit"
-									>
-										<button
-											className="sm-button"
-											type="submit"
-										>
-											Checkout
-										</button>
-									</form>
-								)}
-							</div>
+							<ShoppingCart
+								burgers={burgers}
+								total={total}
+								handleRemove={handleRemove}
+								handleCheckout={handleCheckout}
+							/>
 						</div>
 					</div>
 				</header>
