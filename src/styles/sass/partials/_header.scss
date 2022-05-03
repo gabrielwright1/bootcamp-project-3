@@ -43,4 +43,20 @@
 	border-radius: $border-radius;
 	padding: 0 0 10px 0;
 	box-shadow: $box-shadow;
+	.text-container {
+		display: flex;
+		justify-content: space-between;
+		padding: 5px 0 0 5px;
+		border-top: 1px solid $clr-black;
+	}
+	.checkout-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border-top: 1px solid $clr-black;
+	}
+
+	.hide-button {
+		padding: 0.1rem 1.9rem;
+	}
 }

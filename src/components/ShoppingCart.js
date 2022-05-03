@@ -1,6 +1,9 @@
+// module
+import { useEffect, useState } from "react";
+
 // components
 import CheckoutButton from "./CheckoutButton";
-import CheckoutItems from "./CheckoutItems";
+import CheckoutList from "./CheckoutList";
 
 const ShoppingCart = ({ burgers, total, handleRemove, handleCheckout }) => {
 	return (
@@ -9,7 +12,7 @@ const ShoppingCart = ({ burgers, total, handleRemove, handleCheckout }) => {
 			onSubmit={(event) => handleCheckout(event)}
 			className="shopping-container"
 		>
-			<CheckoutItems burgers={burgers} handleRemove={handleRemove} />
+			<CheckoutList burgers={burgers} handleRemove={handleRemove} />
 			<CheckoutButton burgers={burgers} total={total} />
 		</form>
 	);
