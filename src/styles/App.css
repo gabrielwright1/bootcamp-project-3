@@ -300,7 +300,7 @@ h2 {
 h3 {
   font-family: "Comfortaa", cursive;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
   color: #000000;
   text-align: right;
@@ -345,7 +345,7 @@ p {
 .burger-details li {
   font-family: "Comfortaa", cursive;
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
   color: #000000;
 }
@@ -510,7 +510,8 @@ footer {
   font-family: "Comfortaa", cursive;
   font-weight: 400;
   font-size: 1.1rem;
-  color: #febd0a;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px #febd0a;
   padding: 10px 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -573,7 +574,8 @@ footer {
 }
 .card-buttons .add-button,
 .card-buttons .remove-button {
-  width: 107.633px;
+  width: 100%;
+  max-width: 107.633px;
 }
 
 .modal {
@@ -632,7 +634,8 @@ footer {
   position: relative;
   background-color: #c7eaed;
   max-width: 880px;
-  margin: 10rem auto;
+  margin: 5% auto;
+  /* % distance from top/button */
   padding: 20px;
   border: none;
   border-radius: 20px;
@@ -725,4 +728,60 @@ footer {
   width: 137px;
   color: #000000;
   background-color: #febd0a;
+}
+
+@media (max-width: 840px) {
+  .card-container {
+    width: 90%;
+    margin: 0 auto 20px auto;
+  }
+
+  .burger-card {
+    width: 100%;
+  }
+  .burger-card img {
+    max-width: none;
+    width: 100%;
+  }
+  .burger-card .img-container {
+    width: 90%;
+    margin: 0 auto;
+    max-height: 540px;
+  }
+
+  .burger-details {
+    width: 90%;
+    margin: 10px auto 5px auto;
+  }
+  .burger-details li {
+    font-family: "Comfortaa", cursive;
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+
+  .card-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card-buttons .sm-button {
+    font-family: "Comfortaa", cursive;
+    font-weight: 400;
+    font-size: 1.5rem;
+    max-width: none;
+    width: 90%;
+    margin: 5px auto;
+    padding: 0.7rem 0;
+  }
+
+  .modal .sm-button {
+    font-family: "Comfortaa", cursive;
+    font-weight: 400;
+    font-size: 0.9rem;
+    width: 100%;
+  }
 }

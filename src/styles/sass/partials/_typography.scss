@@ -60,7 +60,7 @@ p {
 
 .burger-details {
 	li {
-		@include setTypography($ff-secondary, $fw-regular, $fs-400);
+		@include setTypography($ff-secondary, $fw-regular, $fs-500);
 		text-transform: uppercase;
 		color: $clr-black;
 	}

@@ -1,2 +1,49 @@
-@media (max-width: 900px) {
+@media (max-width: 840px) {
+	// CARD
+	.card-container {
+		// margin: 0 50px;
+		width: $mobile-width;
+		margin: 0 auto 20px auto;
+	}
+	.burger-card {
+		width: 100%;
+		img {
+			max-width: none;
+			width: 100%;
+		}
+		.img-container {
+			width: $mobile-width;
+			margin: 0 auto;
+			max-height: 540px;
+		}
+	}
+	.burger-details {
+		width: $mobile-width;
+		margin: 10px auto 5px auto;
+		li {
+			@include setTypography($ff-secondary, $fw-regular, $fs-550);
+		}
+	}
+	.card-buttons {
+		display: flex;
+		flex-direction: column;
+		.sm-button {
+			@include setTypography($ff-secondary, $fw-regular, $fs-550);
+			max-width: none;
+			width: $mobile-width;
+			margin: 5px auto;
+			padding: 0.7rem 0;
+		}
+	}
+	// MODAL
+	.modal {
+		.sm-button {
+			@include setTypography($ff-secondary, $fw-regular, $fs-300);
+			width: 100%;
+		}
+	}
 }
+
+// @media (max-width: 520px) {
+// 	// CARD
+// }
