@@ -383,6 +383,23 @@ p {
   margin: 0 10px 0 5px;
 }
 
+.open-modal {
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
+  font-size: 1.5rem;
+  position: absolute;
+  background-color: #c7eaed;
+  border-radius: 20px;
+  border: none;
+  height: 30px;
+  width: 30px;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  -webkit-box-shadow: 4px 4px 0 #000000;
+          box-shadow: 4px 4px 0 #000000;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -462,6 +479,7 @@ ul {
   border-radius: 20px;
   -webkit-box-shadow: 4px 4px 0 #000000;
           box-shadow: 4px 4px 0 #000000;
+  position: relative;
 }
 
 .burger-card {

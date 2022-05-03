@@ -40,6 +40,10 @@ const Card = ({ addListItems, burgerProduct }) => {
 		}
 	};
 
+	const handleModalOpen = () => {
+		console.log("ye");
+	};
+
 	return (
 		<form
 			onSubmit={(e) => {
@@ -49,6 +53,17 @@ const Card = ({ addListItems, burgerProduct }) => {
 			className="burger-card"
 		>
 			<div className="img-container">
+				<label htmlFor="open-modal" className="sr-only">
+					Click to customize the burger
+				</label>
+				<button
+					type="button"
+					id="open-modal"
+					className="open-modal"
+					onClick={handleModalOpen}
+				>
+					i
+				</button>
 				<img src={imgUrl} alt={name} />
 			</div>
 			<ul className="burger-details">
@@ -57,6 +72,7 @@ const Card = ({ addListItems, burgerProduct }) => {
 				<li className="burger-counter">Counter: {counter}</li>
 				<li className="burger-subtotal">Subtotal: $ {subtotal}</li>
 			</ul>
+
 			<div className="card-buttons">
 				<div className="counter-buttons">
 					{/* Increase counter */}
