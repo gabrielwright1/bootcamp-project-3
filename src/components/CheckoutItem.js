@@ -1,5 +1,6 @@
 const CheckoutItem = ({ burger, handleRemove }) => {
 	const { key, name, subtotal, counter } = burger;
+
 	return (
 		<li key={key}>
 			<p>

@@ -1,6 +1,3 @@
-// module
-import { useEffect, useState } from "react";
-
 // components
 import CheckoutButton from "./CheckoutButton";
 import CheckoutList from "./CheckoutList";

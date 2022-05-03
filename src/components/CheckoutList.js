@@ -5,29 +5,52 @@ import CheckoutItem from "./CheckoutItem";
 import { useState, useEffect } from "react";
 
 const CheckoutList = ({ burgers, handleRemove }) => {
+	// state
 	const [isHidden, setIsHidden] = useState(false);
 
-	const handleHideCheckout = () => {
-		setIsHidden(true);
+	// toggle checkout visibility
+	const toggleCheckoutVisibility = (e) => {
+		isHidden ? setIsHidden(false) : setIsHidden(true);
+		handleUnclick(e);
+	};
+
+	const handleUnclick = (e) => {
+		e.target.blur();
 	};
 	return (
 		<>
 			<h2>Shopping Cart</h2>
-			{/* conditional rendering - full/empty cart */}
 			{burgers.length === 0 ? (
 				<div className="text-container">
 					<h3>Your cart is empty.</h3>
 				</div>
 			) : (
 				<div className="text-container">
-					<button
-						className="hide-button sm-button"
-						type="button"
-						onClick={handleHideCheckout}
-					>
-						Hide
-					</button>
-					<h3>Items selected:</h3>
+					{isHidden ? (
+						<button
+							className="show-button sm-button"
+							type="button"
+							onClick={(e) => {
+								toggleCheckoutVisibility(e);
+							}}
+						>
+							Show
+						</button>
+					) : (
+						<button
+							className="hide-button sm-button"
+							type="button"
+							onClick={(e) => {
+								toggleCheckoutVisibility(e);
+							}}
+						>
+							Hide
+						</button>
+					)}
+
+					<h3 className="items-selected-container">
+						Items selected:
+					</h3>
 				</div>
 			)}
 			<ul>

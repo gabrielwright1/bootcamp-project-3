@@ -49,12 +49,12 @@ p {
 	filter: drop-shadow(4px 4px 0 $clr-black);
 	transition: all 0.15s ease-in-out;
 	display: inline-block;
+	cursor: pointer;
 	&:hover,
 	&:focus {
 		filter: drop-shadow(0 0 0 $clr-black);
 		transform: translate(4px, 4px);
 		transition: all 0.15s ease-in-out;
-		cursor: pointer;
 	}
 }
 
@@ -76,7 +76,6 @@ p {
 		border: 0;
 		width: 100%;
 	}
-
 	ul {
 		padding: 0 10px 0 0;
 		margin: 0;
@@ -85,7 +84,7 @@ p {
 		display: flex;
 		flex-direction: row-reverse;
 		justify-content: space-between;
-		margin: 10px 0;
+		margin: 0 0 10px 0;
 		padding: 0 0 0 5px;
 	}
 	p {

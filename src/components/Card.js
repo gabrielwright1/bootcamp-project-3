@@ -14,14 +14,16 @@ const Card = ({ addListItems, burgerProduct, handleModalOpen }) => {
 		setSubtotal(price * counter);
 	}, [counter]);
 
-	const handleAdd = () => {
+	const handleAdd = (e) => {
 		setCounter(counter + 1);
+		handleUnclick(e);
 	};
 
-	const handleSubtract = () => {
+	const handleSubtract = (e) => {
 		if (counter > 0) {
 			setCounter(counter - 1);
 		}
+		handleUnclick(e);
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -38,6 +40,11 @@ const Card = ({ addListItems, burgerProduct, handleModalOpen }) => {
 		} else {
 			alert("Please enter an amount");
 		}
+	};
+
+	// remove focus effect after click
+	const handleUnclick = (e) => {
+		e.target.blur();
 	};
 
 	return (
@@ -81,7 +88,9 @@ const Card = ({ addListItems, burgerProduct, handleModalOpen }) => {
 						id="add-button"
 						className="sm-button"
 						type="button"
-						onClick={handleAdd}
+						onClick={(e) => {
+							handleAdd(e);
+						}}
 					>
 						Add
 					</button>
@@ -93,7 +102,9 @@ const Card = ({ addListItems, burgerProduct, handleModalOpen }) => {
 						id="remove-button"
 						className="sm-button"
 						type="button"
-						onClick={handleSubtract}
+						onClick={(e) => {
+							handleSubtract(e);
+						}}
 					>
 						Remove
 					</button>
@@ -106,6 +117,9 @@ const Card = ({ addListItems, burgerProduct, handleModalOpen }) => {
 					id="add-to-cart-button"
 					className="sm-button"
 					type="submit"
+					onClick={(e) => {
+						handleUnclick(e);
+					}}
 				>
 					Add to cart
 				</button>

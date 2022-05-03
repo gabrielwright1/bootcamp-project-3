@@ -55,9 +55,13 @@
 		justify-content: space-between;
 		border-top: 1px solid $clr-black;
 	}
-
-	.hide-button {
-		padding: 0 1.9rem;
-		height: auto;
+	.items-selected-container {
+		padding: 1rem 10px 0 10px;
+	}
+	.hide-button,
+	.show-button {
+		width: 137px;
+		background-color: $clr-yellow;
+		color: $clr-black;
 	}
 }
