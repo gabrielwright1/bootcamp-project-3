@@ -51,6 +51,8 @@
 	width: 30px;
 	right: 10px;
 	top: 10px;
-	cursor: pointer;
 	box-shadow: $box-shadow;
+	transition: all 0.15s ease-in-out;
+	display: inline-block;
+	cursor: pointer;
 }

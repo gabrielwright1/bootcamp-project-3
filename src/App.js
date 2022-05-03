@@ -189,7 +189,9 @@ function App() {
 					</section>
 				</main>
 			</div>
-			<footer>Made at Juno College (2022) by Gabriel Wright</footer>
+			<footer className="wrapper">
+				Made at Juno College (2022) by Gabriel Wright
+			</footer>
 		</div>
 	);
 }
