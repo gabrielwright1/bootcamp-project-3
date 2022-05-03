@@ -48,9 +48,7 @@ const CheckoutList = ({ burgers, handleRemove }) => {
 						</button>
 					)}
 
-					<h3 className="items-selected-container">
-						Items selected:
-					</h3>
+					<h3 className="items-selected">Items selected:</h3>
 				</div>
 			)}
 			<ul>
