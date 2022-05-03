@@ -2,7 +2,7 @@
 import CheckoutItem from "./CheckoutItem";
 
 // modules
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const CheckoutList = ({ burgers, handleRemove }) => {
 	// state
