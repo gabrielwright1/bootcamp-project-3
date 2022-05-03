@@ -41,18 +41,3 @@
 		margin: 0 10px 0 0;
 	}
 }
-.open-modal {
-	@include setTypography($ff-secondary, $fw-bold, $fs-550);
-	position: absolute;
-	background-color: $clr-yellow;
-	border-radius: $border-radius;
-	border: none;
-	height: 30px;
-	width: 30px;
-	right: 10px;
-	top: 10px;
-	box-shadow: $box-shadow;
-	transition: all 0.15s ease-in-out;
-	display: inline-block;
-	cursor: pointer;
-}

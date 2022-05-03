@@ -43,8 +43,8 @@ const Modal = ({ modalBurger }) => {
 				>
 					<h2>{modalBurger}</h2>
 					{/* Size */}
-					<p>Choose a size</p>
-					<div className="size-container">
+					<h3>Choose a size</h3>
+					<div className="input-container">
 						<input
 							type="radio"
 							id="burger-size-1"
@@ -52,6 +52,8 @@ const Modal = ({ modalBurger }) => {
 							value="Single"
 						/>
 						<label htmlFor="burger-size-1">Single Patty</label>
+					</div>
+					<div className="input-container">
 						<input
 							type="radio"
 							id="burger-size-2"
@@ -61,8 +63,8 @@ const Modal = ({ modalBurger }) => {
 						<label htmlFor="burger-size-2">Double Patties</label>
 					</div>
 					{/* Condiments */}
-					<p>Customize Your Burger</p>
-					<div className="topping-container">
+					<h3>Customize Your Burger</h3>
+					<div className="input-container">
 						<input
 							type="checkbox"
 							id="burger-topping-1"
@@ -70,7 +72,8 @@ const Modal = ({ modalBurger }) => {
 							value="Bacon"
 						/>
 						<label htmlFor="burger-topping-1">Add Bacon</label>
-
+					</div>
+					<div className="input-container">
 						<input
 							type="checkbox"
 							id="burger-topping-2"
@@ -78,7 +81,8 @@ const Modal = ({ modalBurger }) => {
 							value="Lettuce"
 						/>
 						<label htmlFor="burger-topping-2">Add Lettuce</label>
-
+					</div>
+					<div className="input-container">
 						<input
 							type="checkbox"
 							id="burger-topping-3"
@@ -88,7 +92,8 @@ const Modal = ({ modalBurger }) => {
 						<label htmlFor="burger-topping-3">
 							Add Caramelized Onions
 						</label>
-
+					</div>
+					<div className="input-container">
 						<input
 							type="checkbox"
 							id="burger-topping-4"
@@ -98,7 +103,8 @@ const Modal = ({ modalBurger }) => {
 						<label htmlFor="burger-topping-4">
 							Add Extra Cheese
 						</label>
-
+					</div>
+					<div className="input-container">
 						<input
 							type="checkbox"
 							id="burger-topping-5"
@@ -106,7 +112,8 @@ const Modal = ({ modalBurger }) => {
 							value="No Cheese"
 						/>
 						<label htmlFor="burger-topping-5">No Cheese</label>
-
+					</div>
+					<div className="input-container">
 						<input
 							type="checkbox"
 							id="burger-topping-6"
@@ -116,18 +123,24 @@ const Modal = ({ modalBurger }) => {
 						<label htmlFor="burger-topping-6">No Onions</label>
 					</div>
 					{/* Special Instructions */}
-					<p>Special Instructions</p>
-					<label htmlFor="instructions" className="sr-only">
-						Add a note
-					</label>
-					<input
-						type="text"
-						name="instructions"
-						id="instructions"
-						placeholder="Add a note"
-					/>
+					<h3>Special Instructions</h3>
+					<div className="input-container">
+						<label htmlFor="instructions" className="sr-only">
+							Add a note
+						</label>
+						<input
+							type="text"
+							name="instructions"
+							id="instructions"
+							placeholder="Add a note"
+						/>
+					</div>
 					{/* Add to order */}
-					<input type="submit" value="Update Preferences" />
+					<input
+						className="sm-button"
+						type="submit"
+						value="Update Preferences"
+					/>
 				</form>
 			</div>
 		</div>
