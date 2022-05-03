@@ -153,7 +153,7 @@ function App() {
 				<header>
 					<div className="header-container wrapper">
 						<div className="title-container">
-							<h1>Mel's drive-in</h1>
+							<h1>Mel's Drive-In</h1>
 						</div>
 						<div className="header-inner-container">
 							<div className="img-container">
@@ -190,7 +190,7 @@ function App() {
 				</main>
 			</div>
 			<footer className="wrapper">
-				Made at Juno College (2022) by Gabriel Wright
+				Made by Gabriel Wright at Juno College (2022)
 			</footer>
 		</div>
 	);

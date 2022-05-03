@@ -36,6 +36,12 @@ p {
 	text-transform: uppercase;
 	color: $clr-black;
 }
+footer {
+	@include setTypography($ff-secondary, $fw-regular, $fs-400);
+}
+[type="text"]::placeholder {
+	@include setTypography($ff-secondary, $fw-regular, $fs-400);
+}
 
 .sm-button {
 	@include setTypography($ff-secondary, $fw-bold, $fs-400);
@@ -94,4 +100,11 @@ p {
 	[type="submit"] {
 		margin: 0 10px 0 5px;
 	}
+}
+
+.modal {
+	@include setTypography($ff-secondary, $fw-regular, $fs-400);
+}
+.open-modal {
+	@include setTypography($ff-secondary, $fw-bold, $fs-550);
 }

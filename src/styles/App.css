@@ -316,6 +316,42 @@ p {
   color: #000000;
 }
 
+footer {
+  font-family: "Comfortaa", cursive;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+[type=text]::-webkit-input-placeholder {
+  font-family: "Comfortaa", cursive;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+[type=text]::-moz-placeholder {
+  font-family: "Comfortaa", cursive;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+[type=text]:-ms-input-placeholder {
+  font-family: "Comfortaa", cursive;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+[type=text]::-ms-input-placeholder {
+  font-family: "Comfortaa", cursive;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+[type=text]::placeholder {
+  font-family: "Comfortaa", cursive;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
 .sm-button {
   font-family: "Comfortaa", cursive;
   font-weight: 700;
@@ -383,6 +419,18 @@ p {
 }
 .shopping-container [type=submit] {
   margin: 0 10px 0 5px;
+}
+
+.modal {
+  font-family: "Comfortaa", cursive;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.open-modal {
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .wrapper {
@@ -507,9 +555,6 @@ ul {
 }
 
 footer {
-  font-family: "Comfortaa", cursive;
-  font-weight: 400;
-  font-size: 1.1rem;
   color: #ffffff;
   text-shadow: 1px 1px 4px #febd0a;
   padding: 10px 0;
@@ -603,9 +648,6 @@ footer {
   margin: 5px 0;
 }
 .modal label {
-  font-family: "Comfortaa", cursive;
-  font-weight: 400;
-  font-size: 1.1rem;
   margin: 0 0 0 10px;
   cursor: pointer;
 }
@@ -646,7 +688,7 @@ footer {
 .close-modal {
   color: #000000;
   position: absolute;
-  top: 0px;
+  top: 10px;
   right: 20px;
   font-size: 30px;
   font-weight: bold;
@@ -660,9 +702,6 @@ footer {
 }
 
 .open-modal {
-  font-family: "Comfortaa", cursive;
-  font-weight: 700;
-  font-size: 1.5rem;
   position: absolute;
   background-color: #febd0a;
   border-radius: 20px;
@@ -720,17 +759,70 @@ footer {
           justify-content: space-between;
   border-top: 1px solid #000000;
 }
-.shopping-container .items-selected {
+.shopping-container .list-title {
   padding: 1rem 10px 0 10px;
 }
 .shopping-container .hide-button,
 .shopping-container .show-button {
-  width: 137px;
+  max-width: 107.633px;
+  width: 100%;
   color: #000000;
   background-color: #febd0a;
 }
 
 @media (max-width: 840px) {
+  .bg-img-container {
+    background-attachment: fixed;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .header-container h1 {
+    font-family: "Fasthand", cursive;
+    font-weight: 400;
+    font-size: 5.5rem;
+  }
+
+  .header-inner-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header-inner-container .img-container {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    margin: 0 0 15px 0;
+    height: 250px;
+  }
+  .header-inner-container img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 100%;
+  }
+
+  .shopping-container {
+    position: static;
+    width: 100%;
+  }
+  .shopping-container h2 {
+    font-family: "Comfortaa", cursive;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .shopping-container .hide-button,
+.shopping-container .show-button {
+    max-width: 107.633px;
+  }
+
+  .menu h2 {
+    font-family: "Comfortaa", cursive;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+  }
+
   .card-container {
     width: 90%;
     margin: 0 auto 20px auto;
@@ -770,8 +862,8 @@ footer {
   }
   .card-buttons .sm-button {
     font-family: "Comfortaa", cursive;
-    font-weight: 400;
-    font-size: 1.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
     max-width: none;
     width: 90%;
     margin: 5px auto;
@@ -780,8 +872,78 @@ footer {
 
   .modal .sm-button {
     font-family: "Comfortaa", cursive;
+    font-weight: 700;
+    font-size: 1.3rem;
+    width: 100%;
+  }
+  .modal h2 {
+    font-family: "Comfortaa", cursive;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  footer {
+    background-color: #000000;
+  }
+}
+@media (max-width: 486px) {
+  .header-container h1 {
+    font-family: "Fasthand", cursive;
+    font-weight: 400;
+    font-size: 3.5rem;
+  }
+
+  .modal .sm-button {
+    font-family: "Comfortaa", cursive;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  .shopping-container p {
+    font-family: "Comfortaa", cursive;
     font-weight: 400;
     font-size: 0.9rem;
-    width: 100%;
+  }
+  .shopping-container .hide-button,
+.shopping-container .show-button,
+.shopping-container .remove-button {
+    max-width: 88px;
+  }
+  .shopping-container h3 {
+    font-family: "Comfortaa", cursive;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .shopping-container button {
+    font-family: "Comfortaa", cursive;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .burger-details {
+    width: 90%;
+    margin: 10px auto 5px auto;
+  }
+  .burger-details li {
+    font-family: "Comfortaa", cursive;
+    font-weight: 400;
+    font-size: 1.1rem;
+  }
+
+  .modal h2 {
+    font-family: "Comfortaa", cursive;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  .modal h3 {
+    font-family: "Comfortaa", cursive;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  footer {
+    font-family: "Comfortaa", cursive;
+    font-weight: 400;
+    font-size: 0.8rem;
   }
 }

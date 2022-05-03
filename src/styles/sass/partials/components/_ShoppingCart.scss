@@ -21,12 +21,13 @@
 		justify-content: space-between;
 		border-top: 1px solid $clr-black;
 	}
-	.items-selected {
+	.list-title {
 		padding: 1rem 10px 0 10px;
 	}
 	.hide-button,
 	.show-button {
-		width: 137px;
+		max-width: 107.633px;
+		width: 100%;
 		color: $clr-black;
 		background-color: $clr-yellow;
 	}
