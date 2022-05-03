@@ -1,5 +1,7 @@
 // modules
 import { useState, useEffect } from "react";
+// components
+import Modal from "../components/Modal";
 
 const Card = ({ addListItems, burgerProduct }) => {
 	// state
@@ -41,78 +43,83 @@ const Card = ({ addListItems, burgerProduct }) => {
 	};
 
 	const handleModalOpen = () => {
-		console.log("ye");
+		// open the modal
+		const modalElem = document.querySelector("#modal");
+		modalElem.style.display = "block";
 	};
 
 	return (
-		<form
-			onSubmit={(e) => {
-				handleSubmit(e);
-			}}
-			action="submit"
-			className="burger-card"
-		>
-			<div className="img-container">
-				<label htmlFor="open-modal" className="sr-only">
-					Click to customize the burger
-				</label>
-				<button
-					type="button"
-					id="open-modal"
-					className="open-modal"
-					onClick={handleModalOpen}
-				>
-					i
-				</button>
-				<img src={imgUrl} alt={name} />
-			</div>
-			<ul className="burger-details">
-				<li className="burger-name">{name}</li>
-				<li className="burger-price">Price: $ {price}</li>
-				<li className="burger-counter">Counter: {counter}</li>
-				<li className="burger-subtotal">Subtotal: $ {subtotal}</li>
-			</ul>
-
-			<div className="card-buttons">
-				<div className="counter-buttons">
-					{/* Increase counter */}
-					<label htmlFor="add-button" className="sr-only">
-						Increase the counter
+		<>
+			<Modal />
+			<form
+				onSubmit={(e) => {
+					handleSubmit(e);
+				}}
+				action="submit"
+				className="burger-card"
+			>
+				<div className="img-container">
+					<label htmlFor="open-modal" className="sr-only">
+						Click to customize the burger
 					</label>
 					<button
-						id="add-button"
-						className="sm-button"
 						type="button"
-						onClick={handleAdd}
+						id="open-modal"
+						className="open-modal"
+						onClick={handleModalOpen}
 					>
-						Add
+						i
 					</button>
-					{/* Decrease counter */}
-					<label htmlFor="remove-button" className="sr-only">
-						Decrease the counter
+					<img src={imgUrl} alt={name} />
+				</div>
+				<ul className="burger-details">
+					<li className="burger-name">{name}</li>
+					<li className="burger-price">Price: $ {price}</li>
+					<li className="burger-counter">Counter: {counter}</li>
+					<li className="burger-subtotal">Subtotal: $ {subtotal}</li>
+				</ul>
+
+				<div className="card-buttons">
+					<div className="counter-buttons">
+						{/* Increase counter */}
+						<label htmlFor="add-button" className="sr-only">
+							Increase the counter
+						</label>
+						<button
+							id="add-button"
+							className="sm-button"
+							type="button"
+							onClick={handleAdd}
+						>
+							Add
+						</button>
+						{/* Decrease counter */}
+						<label htmlFor="remove-button" className="sr-only">
+							Decrease the counter
+						</label>
+						<button
+							id="remove-button"
+							className="sm-button"
+							type="button"
+							onClick={handleSubtract}
+						>
+							Remove
+						</button>
+					</div>
+					{/* Add to Cart */}
+					<label htmlFor="add-to-cart-button" className="sr-only">
+						Add item(s) to cart
 					</label>
 					<button
-						id="remove-button"
+						id="add-to-cart-button"
 						className="sm-button"
-						type="button"
-						onClick={handleSubtract}
+						type="submit"
 					>
-						Remove
+						Add to cart
 					</button>
 				</div>
-				{/* Add to Cart */}
-				<label htmlFor="add-to-cart-button" className="sr-only">
-					Add item(s) to cart
-				</label>
-				<button
-					id="add-to-cart-button"
-					className="sm-button"
-					type="submit"
-				>
-					Add to cart
-				</button>
-			</div>
-		</form>
+			</form>
+		</>
 	);
 };
 export default Card;

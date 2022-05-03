@@ -19,6 +19,7 @@ import firebase from "./firebase";
 // components
 import Card from "./components/Card";
 import ShoppingCart from "./components/ShoppingCart";
+import Modal from "./components/Modal";
 
 function App() {
 	// state
@@ -136,6 +137,7 @@ function App() {
 	return (
 		<div className="App">
 			<div className="bg-img-container wrapper">
+				{/* Modal displays burger customization options */}
 				<header>
 					<div className="header-container wrapper">
 						<div className="title-container">
@@ -174,7 +176,7 @@ function App() {
 					</section>
 				</main>
 			</div>
-			<footer></footer>
+			<footer>Made at Juno College (2022) by Gabriel Wright</footer>
 		</div>
 	);
 }
