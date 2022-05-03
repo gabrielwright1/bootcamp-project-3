@@ -5,14 +5,15 @@ import CheckoutItem from "./CheckoutItem";
 import { useState, useEffect } from "react";
 
 const CheckoutList = ({ burgers, handleRemove }) => {
-	const [isVisible, setIsVisible] = useState(true);
+	const [isHidden, setIsHidden] = useState(false);
 
 	const handleHideCheckout = () => {
-		console.log("x");
+		setIsHidden(true);
 	};
 	return (
 		<>
 			<h2>Shopping Cart</h2>
+			{/* conditional rendering - full/empty cart */}
 			{burgers.length === 0 ? (
 				<div className="text-container">
 					<h3>Your cart is empty.</h3>
@@ -30,15 +31,17 @@ const CheckoutList = ({ burgers, handleRemove }) => {
 				</div>
 			)}
 			<ul>
-				{burgers.map((burger) => {
-					return (
-						<CheckoutItem
-							key={burger.key}
-							burger={burger}
-							handleRemove={handleRemove}
-						/>
-					);
-				})}
+				{isHidden
+					? null
+					: burgers.map((burger) => {
+							return (
+								<CheckoutItem
+									key={burger.key}
+									burger={burger}
+									handleRemove={handleRemove}
+								/>
+							);
+					  })}
 			</ul>
 		</>
 	);

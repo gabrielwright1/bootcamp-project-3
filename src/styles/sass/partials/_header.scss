@@ -46,7 +46,7 @@
 	.text-container {
 		display: flex;
 		justify-content: space-between;
-		padding: 5px 0 0 5px;
+		padding: 5px 0 10px 5px;
 		border-top: 1px solid $clr-black;
 	}
 	.checkout-container {
@@ -57,6 +57,7 @@
 	}
 
 	.hide-button {
-		padding: 0.1rem 1.9rem;
+		padding: 0 1.9rem;
+		height: auto;
 	}
 }
