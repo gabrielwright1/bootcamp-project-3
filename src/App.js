@@ -26,6 +26,7 @@ function App() {
 	const [burgerProducts, setBurgerProducts] = useState([]);
 	const [total, setTotal] = useState(0);
 	const [burgers, setBurgers] = useState([]);
+	const [modalBurger, setModalBurger] = useState("");
 
 	// query firebase and get the burger products
 	useEffect(() => {
@@ -134,8 +135,19 @@ function App() {
 		clearCartInDb();
 	};
 
+	const handleModalOpen = (burgerProduct) => {
+		// open the modal
+		const modalElem = document.querySelector("#modal");
+		// make modal visible
+		modalElem.style.display = "block";
+		// update burger name state
+		const { name } = burgerProduct;
+		setModalBurger(name);
+	};
+
 	return (
 		<div className="App">
+			<Modal modalBurger={modalBurger} />
 			<div className="bg-img-container wrapper">
 				{/* Modal displays burger customization options */}
 				<header>
@@ -169,6 +181,7 @@ function App() {
 										key={burgerProduct.key}
 										addListItems={addListItems}
 										burgerProduct={burgerProduct}
+										handleModalOpen={handleModalOpen}
 									/>
 								);
 							})}

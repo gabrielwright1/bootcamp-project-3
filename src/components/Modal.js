@@ -1,4 +1,4 @@
-const Modal = () => {
+const Modal = ({ modalBurger }) => {
 	// close the modal when the user clicks on the X
 	const handleModalClose = () => {
 		const modalElem = document.querySelector("#modal");
@@ -8,12 +8,10 @@ const Modal = () => {
 	// close the modal if the user clicks outside of modal
 	window.onclick = (event) => {
 		const modalElem = document.querySelector("#modal");
-
 		if (event.target == modalElem) {
 			modalElem.style.display = "none";
 		}
 	};
-
 	return (
 		<div id="modal" className="modal">
 			<div className="modal-content">
@@ -25,6 +23,8 @@ const Modal = () => {
 					&times;
 				</span>
 				<form action="submit">
+					<h2>{modalBurger}</h2>
+
 					{/* Size */}
 					<p>Choose a size</p>
 					<input
