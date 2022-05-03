@@ -79,36 +79,34 @@ const Card = ({ addListItems, burgerProduct, handleModalOpen }) => {
 			</ul>
 
 			<div className="card-buttons">
-				<div className="counter-buttons">
-					{/* Increase counter */}
-					<label htmlFor="add-button" className="sr-only">
-						Increase the counter
-					</label>
-					<button
-						id="add-button"
-						className="sm-button"
-						type="button"
-						onClick={(e) => {
-							handleAdd(e);
-						}}
-					>
-						Add
-					</button>
-					{/* Decrease counter */}
-					<label htmlFor="remove-button" className="sr-only">
-						Decrease the counter
-					</label>
-					<button
-						id="remove-button"
-						className="sm-button"
-						type="button"
-						onClick={(e) => {
-							handleSubtract(e);
-						}}
-					>
-						Remove
-					</button>
-				</div>
+				{/* Increase counter */}
+				<label htmlFor="add-button" className="sr-only">
+					Increase the counter
+				</label>
+				<button
+					id="add-button"
+					className="sm-button add-button"
+					type="button"
+					onClick={(e) => {
+						handleAdd(e);
+					}}
+				>
+					Add
+				</button>
+				{/* Decrease counter */}
+				<label htmlFor="remove-button" className="sr-only">
+					Decrease the counter
+				</label>
+				<button
+					id="remove-button"
+					className="sm-button remove-button"
+					type="button"
+					onClick={(e) => {
+						handleSubtract(e);
+					}}
+				>
+					Remove
+				</button>
 				{/* Add to Cart */}
 				<label htmlFor="add-to-cart-button" className="sr-only">
 					Add item(s) to cart

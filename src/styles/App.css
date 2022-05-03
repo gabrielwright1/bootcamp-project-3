@@ -440,6 +440,83 @@ ul {
   background-image: url("../../../assets/bg-checker-dark.png");
 }
 
+.header-container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 20px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.header-container .title-container {
+  margin: 0 auto 15px 0;
+  background-color: #ff00b8;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+  -webkit-box-shadow: 4px 4px 0 #000000;
+          box-shadow: 4px 4px 0 #000000;
+}
+
+.header-inner-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin: 0 0 15px 0;
+}
+.header-inner-container .img-container {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  background-color: #6bbfaf;
+  border-radius: 20px;
+  padding: 10px;
+  max-height: 338.15px;
+  -webkit-box-shadow: 4px 4px 0 #000000;
+          box-shadow: 4px 4px 0 #000000;
+}
+.header-inner-container img {
+  border-radius: 20px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.menu {
+  background-color: #febd0a;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 auto;
+  -webkit-box-shadow: 4px 4px 0 #000000;
+          box-shadow: 4px 4px 0 #000000;
+}
+.menu.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer {
+  font-family: "Comfortaa", cursive;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #febd0a;
+  padding: 10px 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .card-container {
   margin: 0 10px 10px 10px;
   display: -webkit-box;
@@ -494,9 +571,9 @@ ul {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-
-.counter-buttons button:nth-of-type(1) {
-  margin: 0 10px 0 0;
+.card-buttons .add-button,
+.card-buttons .remove-button {
+  width: 107.633px;
 }
 
 .modal {
@@ -599,54 +676,6 @@ ul {
   cursor: pointer;
 }
 
-.header-container {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border-radius: 20px;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-}
-.header-container .title-container {
-  margin: 0 auto 15px 0;
-  background-color: #ff00b8;
-  border-radius: 20px;
-  width: 100%;
-  text-align: center;
-  -webkit-box-shadow: 4px 4px 0 #000000;
-          box-shadow: 4px 4px 0 #000000;
-}
-
-.header-inner-container {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 100%;
-  margin: 0 0 15px 0;
-}
-.header-inner-container .img-container {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
-  background-color: #6bbfaf;
-  border-radius: 20px;
-  padding: 10px;
-  max-height: 338.15px;
-  -webkit-box-shadow: 4px 4px 0 #000000;
-          box-shadow: 4px 4px 0 #000000;
-}
-.header-inner-container img {
-  border-radius: 20px;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .shopping-container {
   position: absolute;
   z-index: 10;
@@ -694,33 +723,6 @@ ul {
 .shopping-container .hide-button,
 .shopping-container .show-button {
   width: 137px;
-}
-
-.menu {
+  color: #000000;
   background-color: #febd0a;
-  border-radius: 20px;
-  text-align: center;
-  margin: 0 auto;
-  -webkit-box-shadow: 4px 4px 0 #000000;
-          box-shadow: 4px 4px 0 #000000;
-}
-.menu.wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-footer {
-  font-family: "Comfortaa", cursive;
-  font-weight: 400;
-  font-size: 1.1rem;
-  color: #febd0a;
-  padding: 10px 0;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }

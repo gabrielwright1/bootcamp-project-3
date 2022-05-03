@@ -1,0 +1,33 @@
+.shopping-container {
+	position: absolute;
+	z-index: 10;
+	right: 5px;
+	width: calc(50% - 15px);
+	display: flex;
+	flex-direction: column;
+	background-color: $clr-light-blue;
+	border-radius: $border-radius;
+	padding: 0 0 10px 0;
+	box-shadow: $box-shadow;
+	.text-container {
+		display: flex;
+		justify-content: space-between;
+		padding: 5px 0 10px 5px;
+		border-top: 1px solid $clr-black;
+	}
+	.checkout-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border-top: 1px solid $clr-black;
+	}
+	.items-selected {
+		padding: 1rem 10px 0 10px;
+	}
+	.hide-button,
+	.show-button {
+		width: 137px;
+		color: $clr-black;
+		background-color: $clr-yellow;
+	}
+}
