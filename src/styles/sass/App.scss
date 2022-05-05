@@ -1,0 +1,16 @@
+// import general partials
+@import "./partials/setup";
+@import "./partials/mixins";
+@import "./partials/variables";
+@import "./partials/typography";
+@import "./partials/utility";
+@import "./partials/base-styles";
+@import "./partials/header";
+@import "./partials/sections";
+@import "./partials/footer";
+// import component partials
+@import "./partials/components/Card";
+@import "./partials/components/Modal";
+@import "./partials/components/ShoppingCart";
+// import media queries
+@import "./partials/media-queries";

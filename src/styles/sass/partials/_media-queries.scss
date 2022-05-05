@@ -1,0 +1,156 @@
+@media (max-width: 840px) {
+	// BACKGROUND IMAGE
+	.bg-img-container {
+		background-attachment: fixed;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	// HEADER
+	.header-container {
+		h1 {
+			@include setTypography($ff-primary, $fw-regular, $fs-775);
+		}
+	}
+
+	.header-inner-container {
+		flex-direction: column;
+		.img-container {
+			flex-basis: auto;
+			margin: 0 0 15px 0;
+			height: 250px;
+		}
+		img {
+			object-fit: cover;
+			height: 100%;
+		}
+	}
+
+	// SHOPPING CART
+	.shopping-container {
+		position: static;
+		width: 100%;
+		h2 {
+			@include setTypography($ff-secondary, $fw-bold, $fs-650);
+			text-align: center;
+		}
+		.hide-button,
+		.show-button {
+			max-width: 107.633px;
+		}
+	}
+
+	// MENU
+	.menu {
+		h2 {
+			@include setTypography($ff-secondary, $fw-bold, $fs-650);
+			text-align: center;
+		}
+	}
+
+	// CARD
+	.card-container {
+		width: $mobile-width;
+		margin: 0 auto 20px auto;
+	}
+	.burger-card {
+		width: 100%;
+		img {
+			max-width: none;
+			width: 100%;
+		}
+		.img-container {
+			width: $mobile-width;
+			margin: 0 auto;
+			max-height: 540px;
+		}
+	}
+	.burger-details {
+		width: $mobile-width;
+		margin: 10px auto 5px auto;
+		li {
+			@include setTypography($ff-secondary, $fw-regular, $fs-550);
+		}
+	}
+	.card-buttons {
+		display: flex;
+		flex-direction: column;
+		.sm-button {
+			@include setTypography($ff-secondary, $fw-bold, $fs-400);
+			max-width: none;
+			width: $mobile-width;
+			margin: 5px auto;
+			padding: 0.7rem 0;
+		}
+	}
+	// MODAL
+	.modal {
+		.sm-button {
+			@include setTypography($ff-secondary, $fw-bold, $fs-500);
+			width: 100%;
+		}
+		h2 {
+			@include setTypography($ff-secondary, $fw-bold, $fs-650);
+		}
+	}
+	// FOOTER
+	footer {
+		background-color: $clr-black;
+	}
+}
+
+@media (max-width: 486px) {
+	// HEADER
+	.header-container {
+		h1 {
+			@include setTypography($ff-primary, $fw-regular, $fs-725);
+		}
+	}
+	// MODAL
+	.modal {
+		.sm-button {
+			@include setTypography($ff-secondary, $fw-regular, $fs-300);
+		}
+	}
+
+	// SHOPPING CART
+	.shopping-container {
+		p {
+			@include setTypography($ff-secondary, $fw-regular, $fs-200);
+		}
+		.hide-button,
+		.show-button,
+		.remove-button {
+			max-width: 88px;
+		}
+
+		h3 {
+			@include setTypography($ff-secondary, $fw-bold, $fs-400);
+		}
+		button {
+			@include setTypography($ff-secondary, $fw-bold, $fs-200);
+		}
+	}
+	// CARD
+	.burger-details {
+		width: $mobile-width;
+		margin: 10px auto 5px auto;
+		li {
+			@include setTypography($ff-secondary, $fw-regular, $fs-400);
+		}
+	}
+
+	// MODAL
+	.modal {
+		h2 {
+			@include setTypography($ff-secondary, $fw-bold, $fs-550);
+		}
+		h3 {
+			@include setTypography($ff-secondary, $fw-bold, $fs-400);
+		}
+	}
+
+	// FOOTER
+	footer {
+		@include setTypography($ff-secondary, $fw-regular, $fs-100);
+	}
+}

@@ -1,0 +1,23 @@
+body {
+	background-image: url("https://images.unsplash.com/photo-1567108485555-230071a08521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow-x: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.bg-img-container {
+	border-radius: $border-radius;
+	display: block;
+	padding: 10px;
+	background-image: url("../../../assets/bg-checker-dark.png");
+}

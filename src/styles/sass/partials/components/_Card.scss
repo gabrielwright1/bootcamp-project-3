@@ -1,0 +1,42 @@
+.card-container {
+	margin: 0 10px 10px 10px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	background-color: $clr-teal;
+	border-radius: $border-radius;
+	height: auto;
+
+	.img-container {
+		max-height: 267px;
+		overflow-y: hidden;
+		border-radius: $border-radius;
+		box-shadow: $box-shadow;
+		position: relative;
+	}
+}
+.burger-card {
+	margin: 20px 0;
+}
+
+.burger-details {
+	border-radius: $border-radius;
+	background-color: $clr-white;
+	box-shadow: $box-shadow;
+	padding: 20px 10px;
+	li {
+		text-align: center;
+	}
+}
+
+.card-buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	.add-button,
+	.remove-button {
+		width: 100%;
+		max-width: 107.633px;
+	}
+}

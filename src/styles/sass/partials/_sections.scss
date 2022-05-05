@@ -1,0 +1,11 @@
+.menu {
+	&.wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	background-color: $clr-yellow;
+	border-radius: $border-radius;
+	text-align: center;
+	margin: 0 auto;
+	box-shadow: $box-shadow;
+}

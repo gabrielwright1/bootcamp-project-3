@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Fasthand&display=swap");
+
+h1 {
+	@include setTypography($ff-primary, $fw-regular, $fs-800);
+	color: $clr-white;
+	background-color: $clr-black;
+	text-shadow: (4px 4px 4px $clr-dark-blue);
+	padding: 10px 0;
+	margin: 30px 0;
+}
+
+h2 {
+	@include setTypography($ff-secondary, $fw-regular, $fs-700);
+	text-transform: uppercase;
+	color: $clr-white;
+	text-shadow: (1px 1px 4px $clr-pink);
+	padding: 10px;
+	text-align: center;
+	margin: 20px 0;
+	background-color: $clr-black;
+	width: 100%;
+}
+
+h3 {
+	@include setTypography($ff-secondary, $fw-bold, $fs-500);
+	text-transform: uppercase;
+	color: $clr-black;
+	text-align: right;
+	border-top: 1px solid $clr-black;
+	padding: 10px 10px 0 0;
+}
+p {
+	@include setTypography($ff-secondary, $fw-regular, $fs-400);
+	text-transform: uppercase;
+	color: $clr-black;
+}
+footer {
+	@include setTypography($ff-secondary, $fw-regular, $fs-400);
+}
+[type="text"]::placeholder {
+	@include setTypography($ff-secondary, $fw-regular, $fs-400);
+}
+
+.sm-button {
+	@include setTypography($ff-secondary, $fw-bold, $fs-400);
+	color: $clr-white;
+	background-color: $clr-dark-pink;
+	border-radius: $border-radius;
+	border: none;
+	padding: 1rem 0.8rem;
+	text-transform: uppercase;
+	filter: drop-shadow(4px 4px 0 $clr-black);
+	transition: all 0.15s ease-in-out;
+	display: inline-block;
+	cursor: pointer;
+	&:hover,
+	&:focus {
+		filter: drop-shadow(0 0 0 $clr-black);
+		transform: translate(4px, 4px);
+		transition: all 0.15s ease-in-out;
+	}
+}
+
+.burger-details {
+	li {
+		@include setTypography($ff-secondary, $fw-regular, $fs-500);
+		text-transform: uppercase;
+		color: $clr-black;
+	}
+}
+
+.shopping-container {
+	h2 {
+		text-align: right;
+	}
+	h3 {
+		padding: 10px;
+		margin: 0;
+		border: 0;
+		width: 100%;
+	}
+	ul {
+		padding: 0 10px 0 0;
+		margin: 0;
+	}
+	li {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		margin: 0 0 10px 0;
+		padding: 0 0 0 5px;
+	}
+	p {
+		text-align: right;
+		margin: auto 0;
+	}
+	[type="submit"] {
+		margin: 0 10px 0 5px;
+	}
+}
+
+.modal {
+	@include setTypography($ff-secondary, $fw-regular, $fs-400);
+}
+.open-modal {
+	@include setTypography($ff-secondary, $fw-bold, $fs-550);
+}
