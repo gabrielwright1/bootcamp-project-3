@@ -1,4 +1,4 @@
-const CheckoutButton = ({ burgers, total }) => {
+const CheckoutContainer = ({ burgers, total }) => {
 	return (
 		<div className="checkout-container">
 			<h3>Total: $ {total}</h3>
@@ -11,4 +11,4 @@ const CheckoutButton = ({ burgers, total }) => {
 	);
 };
 
-export default CheckoutButton;
+export default CheckoutContainer;

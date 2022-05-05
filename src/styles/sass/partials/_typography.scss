@@ -9,7 +9,6 @@ h1 {
 	margin: 30px 0;
 }
 
-// h2 - my toolkit, recent projects, my journey
 h2 {
 	@include setTypography($ff-secondary, $fw-regular, $fs-700);
 	text-transform: uppercase;
@@ -22,7 +21,6 @@ h2 {
 	width: 100%;
 }
 
-// h3 - I'm a front end, who am i here are some, Hacker News, please feel free
 h3 {
 	@include setTypography($ff-secondary, $fw-bold, $fs-500);
 	text-transform: uppercase;
@@ -50,7 +48,6 @@ footer {
 	border-radius: $border-radius;
 	border: none;
 	padding: 1rem 0.8rem;
-	// margin: 0 5px;
 	text-transform: uppercase;
 	filter: drop-shadow(4px 4px 0 $clr-black);
 	transition: all 0.15s ease-in-out;

@@ -1,5 +1,5 @@
 // components
-import CheckoutButton from "./CheckoutButton";
+import CheckoutContainer from "./CheckoutContainer";
 import CheckoutList from "./CheckoutList";
 
 const ShoppingCart = ({ burgers, total, handleRemove, handleCheckout }) => {
@@ -10,7 +10,7 @@ const ShoppingCart = ({ burgers, total, handleRemove, handleCheckout }) => {
 			className="shopping-container"
 		>
 			<CheckoutList burgers={burgers} handleRemove={handleRemove} />
-			<CheckoutButton burgers={burgers} total={total} />
+			<CheckoutContainer burgers={burgers} total={total} />
 		</form>
 	);
 };

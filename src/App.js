@@ -17,9 +17,9 @@ import {
 import firebase from "./firebase";
 
 // components
-import Card from "./components/Card";
-import ShoppingCart from "./components/ShoppingCart";
 import Modal from "./components/Modal";
+import Footer from "./components/Footer";
+import ContentWrapper from "./components/ContentWrapper";
 
 function App() {
 	// state
@@ -61,7 +61,6 @@ function App() {
 			setBurgers(burgerCartArr);
 		});
 
-		// grab total
 		// update local state to the total stored in database
 		get(totalRef).then((snapshot) => {
 			setTotal(snapshot.val().cartTotal);
@@ -148,50 +147,16 @@ function App() {
 	return (
 		<div className="App">
 			<Modal modalBurger={modalBurger} />
-			<div className="bg-img-container wrapper">
-				{/* Modal displays burger customization options */}
-				<header>
-					<div className="header-container wrapper">
-						<div className="title-container">
-							<h1>Mel's Drive-In</h1>
-						</div>
-						<div className="header-inner-container">
-							<div className="img-container">
-								<img
-									src="https://images.unsplash.com/photo-1513918573039-35f42ae13895?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
-									alt="an old 50s car in front of a diner"
-								/>
-							</div>
-							<ShoppingCart
-								burgers={burgers}
-								total={total}
-								handleRemove={handleRemove}
-								handleCheckout={handleCheckout}
-							/>
-						</div>
-					</div>
-				</header>
-				<main>
-					<section className="menu wrapper">
-						<h2>Menu</h2>
-						<div className="card-container">
-							{burgerProducts.map((burgerProduct) => {
-								return (
-									<Card
-										key={burgerProduct.key}
-										addListItems={addListItems}
-										burgerProduct={burgerProduct}
-										handleModalOpen={handleModalOpen}
-									/>
-								);
-							})}
-						</div>
-					</section>
-				</main>
-			</div>
-			<footer className="wrapper">
-				Made by Gabriel Wright at Juno College (2022)
-			</footer>
+			<ContentWrapper
+				burgers={burgers}
+				total={total}
+				burgerProducts={burgerProducts}
+				addListItems={addListItems}
+				handleRemove={handleRemove}
+				handleCheckout={handleCheckout}
+				handleModalOpen={handleModalOpen}
+			/>
+			<Footer />
 		</div>
 	);
 }

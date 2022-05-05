@@ -12,7 +12,8 @@
 
 	@if $line-height != normal {
 		line-height: calc($line-height / 20) * 1rem;
-	} @else if $letter-spacing != normal {
+	}
+	@if $letter-spacing != normal {
 		letter-spacing: calc($letter-spacing / 20) * 1rem;
 	}
 }
