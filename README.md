@@ -9,7 +9,9 @@ Objectives:
 - Pass counter information between React components and use hooks effectively
 
 Team Members:
+
 Gabriel Wright
 
 Live Demo:
+
 https://gabriel-wright-mels-drive-in.netlify.app/
