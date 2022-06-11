@@ -11,5 +11,5 @@
 - Pull data from firebase whenever the app loads to ensure that the data persists
 - Pass counter information between React components and use hooks effectively
 
-## Team Members:
+## Team members:
 - Gabriel Wright
