@@ -1,6 +1,6 @@
 # Mel's Drive-In - Food Delivery App
 
-## Live Demo:
+## Live site:
 - https://gabriel-wright-mels-drive-in.netlify.app/
 
 ## Objectives:
