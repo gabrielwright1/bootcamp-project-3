@@ -1,4 +1,4 @@
-# Mel's Drive-In - Food Delivery App
+# Mel's Drive-In App
 
 ## Live site:
 - https://gabriel-wright-mels-drive-in.netlify.app/
