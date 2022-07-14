@@ -1,4 +1,4 @@
-# Mel's Drive-In App
+# Mel's Drive-In App - Personal Project
 
 ## Live site:
 - https://gabriel-wright-mels-drive-in.netlify.app/
